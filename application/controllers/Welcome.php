@@ -20,6 +20,25 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$getProvinsi = $this->db->get('provinsi');
+		foreach($getProvinsi->result() as $prov){
+			$dataKab = [];
+			$getKabupaten = $this->db->get_where('kabupaten', ['provinsi_id' => $prov->id]);
+			foreach($getKabupaten->result() as $kab){
+				$dataKab[] = [
+					'dapil' => $prov->kode_provinsi." ".$kab->kode_kabupaten,
+					'kabupaten' => $kab->kabupaten,
+					'singkat' => $kab->singkat_kabupaten
+				];
+			}
+			$datas[] = [
+				'provinsi' => $prov->provinsi,
+				'singkat' => $prov->singkat_provinsi,
+				'kabupaten' => $dataKab
+			];
+		}
+
+		$this->output->set_content_type('application/json')->set_output(json_encode($datas));
+		
 	}
 }
