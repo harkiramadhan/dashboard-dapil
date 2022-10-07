@@ -21,9 +21,7 @@ class Kabupaten extends CI_Controller{
                 'id' => $row->id,
                 'provinsi_id' => $row->provinsi_id,
                 'kabupaten' => $row->kabupaten,
-                'kode_kabupaten' => $row->kode_kabupaten,
-                'singkat_kabupaten' => $row->singkat_kabupaten,
-                'dapil' => $row->singkat_provinsi." ".$row->kode_kabupaten
+                'dapil' => $row->dapil
             ];
         }
         $this->output->set_content_type('application/json')->set_output(json_encode($datas));
