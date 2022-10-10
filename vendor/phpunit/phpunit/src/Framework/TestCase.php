@@ -497,21 +497,21 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     /**
      * This method is called before the first test of this test class is run.
      */
-    public static function setUpBeforeClass(): void
+public static function setUpBeforeClass()
     {
     }
 
     /**
      * This method is called after the last test of this test class is run.
      */
-    public static function tearDownAfterClass(): void
+public static function tearDownAfterClass()
     {
     }
 
     /**
      * This method is called before each test.
      */
-    protected function setUp(): void
+protected function setUp()
     {
     }
 
@@ -520,7 +520,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
      *
      * This method is called between setUp() and test.
      */
-    protected function assertPreConditions(): void
+protected function assertPreConditions()
     {
     }
 
@@ -529,14 +529,14 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
      *
      * This method is called between test and tearDown().
      */
-    protected function assertPostConditions(): void
+protected function assertPostConditions()
     {
     }
 
     /**
      * This method is called after each test.
      */
-    protected function tearDown(): void
+protected function tearDown()
     {
     }
 
@@ -652,13 +652,11 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
         $this->expectExceptionMessage($exception->getMessage());
         $this->expectExceptionCode($exception->getCode());
     }
-
-    public function expectNotToPerformAssertions(): void
+public function expectNotToPerformAssertions()
     {
         $this->doesNotPerformAssertions = true;
     }
-
-    public function expectDeprecation(): void
+public function expectDeprecation()
     {
         $this->expectedException = Deprecated::class;
     }
@@ -672,8 +670,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     {
         $this->expectExceptionMessageMatches($regularExpression);
     }
-
-    public function expectNotice(): void
+public function expectNotice()
     {
         $this->expectedException = Notice::class;
     }
@@ -687,8 +684,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     {
         $this->expectExceptionMessageMatches($regularExpression);
     }
-
-    public function expectWarning(): void
+public function expectWarning()
     {
         $this->expectedException = WarningError::class;
     }
@@ -702,8 +698,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     {
         $this->expectExceptionMessageMatches($regularExpression);
     }
-
-    public function expectError(): void
+public function expectError()
     {
         $this->expectedException = Error::class;
     }
@@ -722,8 +717,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
     {
         return $this->status;
     }
-
-    public function markAsRisky(): void
+public function markAsRisky()
     {
         $this->status = BaseTestRunner::STATUS_RISKY;
     }
@@ -1118,7 +1112,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
      *
      * @internal This method is not covered by the backward compatibility promise for PHPUnit
      */
-    public function runBare(): void
+public function runBare()
     {
         $this->numAssertions = 0;
 

@@ -18,7 +18,13 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	public function index()
+
+	function index(){
+		$var['provinsi'] = $this->db->get('provinsi');
+		$this->load->view('landing', $var);
+	}
+
+	public function indexx()
 	{
 		$getProvinsi = $this->db->get('provinsi');
 		foreach($getProvinsi->result() as $prov){
