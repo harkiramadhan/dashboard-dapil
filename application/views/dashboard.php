@@ -18,6 +18,7 @@
   <!-- Tooltip Styling -->
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/light-border.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <div class="page-wrapper">
@@ -67,14 +68,11 @@
             <div class="section-heading-centered">
               <h1 class="heading-m regular">Daerah Pemilihan <?= str_replace('Prov. ', '', $provinsi->provinsi) ?></h1>
               <div class="pill-wrapper">
-                <!-- <a href="#" class="pill opened w-inline-block">
-                  <div>Dapil III</div>
-                </a> -->
-                <?php foreach($dapil->result() as $row): ?>
-                  <a href="#" class="pill w-inline-block">
+                <?php $no= 1; foreach($dapil->result() as $row): ?>
+                  <a href="#" class="pill w-inline-block filter-dapil <?= ($no==1) ? 'opened' : '' ?>" data-id="<?= $row->id ?>">
                     <div><?= $row->dapil ?></div>
                   </a>
-                <?php endforeach; ?>
+                <?php $no++; endforeach; ?>
               </div>
             </div>
           </div>
@@ -83,32 +81,33 @@
               <div data-hover="false" data-delay="0" class="dropdown first w-dropdown">
                 <div class="dropdown-toggle w-dropdown-toggle">
                   <div class="dropdown-icon w-icon-dropdown-toggle"></div>
-                  <div class="paragraph">Bidang</div>
+                  <div class="paragraph" id="bidang">Bidang</div>
                 </div>
                 <nav class="home-dropdown-lists w-dropdown-list">
-                  <form action="/search" class="dropdown-search-bar w-form">
-                    <input type="search" class="home-dropdown-search w-input" maxlength="256" name="query" placeholder="Search…" id="search" required=""><input type="submit" value="Search" class="search-button w-button">
-                  </form>
+                  <input type="search" class="home-dropdown-search w-input" maxlength="256" name="query" placeholder="Search…" id="myInput" required="">
+                  <a href="#" class="dropdown-item w-dropdown-link data-bidang">Semua Bidang</a>
                   <?php foreach($bidang->result() as $bdr){ ?>
-                    <a href="#" class="dropdown-item w-dropdown-link"><?= $bdr->bidang ?></a>
+                    <a href="#" class="dropdown-item w-dropdown-link data-bidang"><?= $bdr->bidang ?></a>
                   <?php } ?>
                 </nav>
               </div>
               <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
                 <div class="dropdown-toggle w-dropdown-toggle">
                   <div class="dropdown-icon w-icon-dropdown-toggle"></div>
-                  <div class="paragraph">Tahun</div>
+                  <div class="paragraph" id="tahun">Tahun</div>
                 </div>
                 <nav class="dropdown-list auto w-dropdown-list">
-                  <a href="#" class="dropdown-item w-dropdown-link">2020</a>
-                  <a href="#" class="dropdown-item w-dropdown-link">2021</a>
-                  <a href="#" class="dropdown-item w-dropdown-link">2022</a>
+                  <a href="#" class="dropdown-item w-dropdown-link data-tahun">Semua Tahun</a>
+                  <a href="#" class="dropdown-item w-dropdown-link data-tahun">2020</a>
+                  <a href="#" class="dropdown-item w-dropdown-link data-tahun">2021</a>
+                  <a href="#" class="dropdown-item w-dropdown-link data-tahun">2022</a>
                 </nav>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <input type="hidden" id="provinsiid" value="<?= $this->input->get('prov', TRUE) ?>">
       <section class="section no-padding wf-section">
         <div class="container">
           <div class="content-wrapper">
@@ -122,68 +121,8 @@
                   <h3 class="heading-xs medium">DAK Fisik Reguler</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const labels = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config = {
-            type: 'bar',
-            data: data,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart = new Chart(ctx, config);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DAK_Fisik_Reguler-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-f8ad2aae-4107-6c8e-04f1-3519ba3396c1-ec0da9ff" class="bar-content">
@@ -192,68 +131,8 @@
                   <h3 class="heading-xs medium">DAK Fisik Penugasan</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart2" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx2 = document.getElementById('myChart2').getContext('2d');
-        const labels2 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data2 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config2 = {
-            type: 'bar',
-            data: data2,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart2 = new Chart(ctx2, config2);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DAK_Fisik_Penugasan-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-_30d3b11e-f6e7-561e-1903-1b053dc12f5d-ec0da9ff" class="bar-content">
@@ -262,68 +141,8 @@
                   <h3 class="heading-xs medium">DAK Fisik Afirmasi</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart3" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx3 = document.getElementById('myChart3').getContext('2d');
-        const labels3 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data3 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config3 = {
-            type: 'bar',
-            data: data3,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart3 = new Chart(ctx3, config3);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DAK_Fisik_Afirmasi-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-a671b37f-c7dc-ad68-c70f-9a627aedc524-ec0da9ff" class="bar-content">
@@ -332,68 +151,8 @@
                   <h3 class="heading-xs medium">DAK Non Fisik</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart4" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx4 = document.getElementById('myChart4').getContext('2d');
-        const labels4 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data4 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config4 = {
-            type: 'bar',
-            data: data4,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart4 = new Chart(ctx4, config4);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DAK_Non_Fisik-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-_85c7003f-a803-1f71-9bd8-3a609ec320ac-ec0da9ff" class="bar-content">
@@ -402,68 +161,8 @@
                   <h3 class="heading-xs medium">DAU</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart5" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx5 = document.getElementById('myChart5').getContext('2d');
-        const labels5 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data5 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config5 = {
-            type: 'bar',
-            data: data5,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart5 = new Chart(ctx5, config5);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DAU-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-c1c4d836-3222-3dd2-5987-d3173d6186e1-ec0da9ff" class="bar-content">
@@ -472,68 +171,8 @@
                   <h3 class="heading-xs medium">DID</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart6" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx6 = document.getElementById('myChart6').getContext('2d');
-        const labels6 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data6 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config6 = {
-            type: 'bar',
-            data: data6,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart6 = new Chart(ctx6, config6);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DID-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-_62128a06-0ea3-dcdb-1c01-98edf600c336-ec0da9ff" class="bar-content">
@@ -541,68 +180,8 @@
                   <h3 class="heading-xs medium">Dana Desa</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart7" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx7 = document.getElementById('myChart7').getContext('2d');
-        const labels7 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data7 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config7 = {
-            type: 'bar',
-            data: data7,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart7 = new Chart(ctx7, config7);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="Dana_Desa-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-_11c1a606-658b-0b80-7579-aa988c389ec4-ec0da9ff" class="bar-content note">
@@ -639,68 +218,8 @@
                   <h3 class="heading-xs medium">DBH PBB</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart8" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx8 = document.getElementById('myChart8').getContext('2d');
-        const labels8 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data8 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config8 = {
-            type: 'bar',
-            data: data2,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart8 = new Chart(ctx8, config8);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_PBB-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-38169366187a-ec0da9ff" class="bar-content">
@@ -709,68 +228,8 @@
                   <h3 class="heading-xs medium">DBH PPh</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart9" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx9 = document.getElementById('myChart9').getContext('2d');
-        const labels9 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data9 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config9 = {
-            type: 'bar',
-            data: data9,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart9 = new Chart(ctx9, config9);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_PPh-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-38169366187c-ec0da9ff" class="bar-content">
@@ -779,68 +238,8 @@
                   <h3 class="heading-xs medium">DBH SDA Panas Bumi</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart10" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx10 = document.getElementById('myChart10').getContext('2d');
-        const labels10 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data10 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config10 = {
-            type: 'bar',
-            data: data10,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart10 = new Chart(ctx10, config10);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_SDA_Panas_Bumi-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-38169366187e-ec0da9ff" class="bar-content">
@@ -849,278 +248,38 @@
                   <h3 class="heading-xs medium">DBH SDA Perikanan</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart11" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx11 = document.getElementById('myChart11').getContext('2d');
-        const labels11 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data11 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config11 = {
-            type: 'bar',
-            data: data11,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart11 = new Chart(ctx11, config11);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_SDA_Perikanan-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661880-ec0da9ff" class="bar-content">
                 <div class="graph-title">
                   <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Kehutanan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
-                  <h3 class="heading-xs medium">DBH SDA Kehutanan</h3>
+                  <h3 class="heading-xs medium">DBH SDA Kehutanan</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart12" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx12 = document.getElementById('myChart12').getContext('2d');
-        const labels12 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data12 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config12 = {
-            type: 'bar',
-            data: data12,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart12 = new Chart(ctx12, config12);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_SDA_Kehutanan-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661882-ec0da9ff" class="bar-content">
                 <div class="graph-title">
                   <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Minyak dan Gas Bumi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
-                  <h3 class="heading-xs medium">DBH SDA Migas</h3>
+                  <h3 class="heading-xs medium">DBH SDA Migas</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart13" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx13 = document.getElementById('myChart13').getContext('2d');
-        const labels13 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data13 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config13 = {
-            type: 'bar',
-            data: data13,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart13 = new Chart(ctx13, config13);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_SDA_Migas-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661884-ec0da9ff" class="bar-content">
                 <div class="graph-title">
                   <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Mineral dan Batubara" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
-                  <h3 class="heading-xs medium">DBH SDA Minerba</h3>
+                  <h3 class="heading-xs medium">DBH SDA Minerba</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart14" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx14 = document.getElementById('myChart14').getContext('2d');
-        const labels14 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data14 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config14 = {
-            type: 'bar',
-            data: data14,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart14 = new Chart(ctx14, config14);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_SDA_Minerba-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661886-ec0da9ff" class="bar-content">
@@ -1129,68 +288,8 @@
                   <h3 class="heading-xs medium">DBH CHT</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script"><canvas id="myChart15" style="width: 100%;" height="400;"></canvas>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                  <script>
-        const ctx15 = document.getElementById('myChart15').getContext('2d');
-        const labels15 = ['Probolinggo', 'Surakarta', 'Semarang', 'Sleman']
-        const data15 = {
-            labels: labels,
-            datasets: [
-                {
-                    label: '2020',
-                    data: [123123, 23412, 123107, 139741],
-                    backgroundColor: '#4339F2',
-                    barThickness: 20
-                },
-                {
-                    label: "2021",
-                    data: [23123, 89127, 12371, 109237],
-                    backgroundColor: '#34B53A',
-                    barThickness: 20
-                },
-                {
-                    label: '2022',
-                    data: [123872, 12837, 92833, 123981],
-                    backgroundColor: '#FFB200',
-                    barThickness: 20
-                },
-            ]
-        };
-        const config15 = {
-            type: 'bar',
-            data: data15,
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                }
-            }
-        };
-        const myChart15 = new Chart(ctx15, config15);
-    </script>
+                <div class="w-embed w-script">
+                  <canvas id="DBH_CHT-chart" style="width: 100%;" max-height="400;"></canvas>
                 </div>
               </div>
             </div>
@@ -1211,56 +310,8 @@
                     <h3 class="heading-xs medium">IPM</h3>
                     <div class="paragraph-small">dalam (%)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart16" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx16 = document.getElementById('myChart16').getContext('2d');
-        const labels16 = ['2021', '2022']
-        const data16 = {
-            labels: labels16,
-            datasets: [
-                {
-                    label: 'IPM',
-                    data: [123123, 23412],
-                    borderColor: '#34B53A',
-                    fill: 'start',
-                    backgroundColor: '#D6F0D8',
-                },
-            ]
-        };
-        const config16 = {
-            type: 'line',
-            data: data16,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart16 = new Chart(ctx16, config16);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="IPM-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_22d40952-1588-ce49-d597-342f996fcc20-ec0da9ff" class="bar-content short">
@@ -1269,56 +320,8 @@
                     <h3 class="heading-xs medium">AHH</h3>
                     <div class="paragraph-small">(tahun)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart17" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx17 = document.getElementById('myChart17').getContext('2d');
-        const labels17 = ['2021', '2022']
-        const data17 = {
-            labels: labels16,
-            datasets: [
-                {
-                    label: 'AHH',
-                    data: [123123, 23412],
-                    borderColor: '#02A0FC',
-                    fill: 'start',
-                    backgroundColor: '#CCECFE',
-                },
-            ]
-        };
-        const config17 = {
-            type: 'line',
-            data: data17,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart17 = new Chart(ctx17, config17);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="AHH-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-ea25fa97-d09c-13c6-5ffe-6bc8a7131284-ec0da9ff" class="bar-content short">
@@ -1327,56 +330,8 @@
                     <h3 class="heading-xs medium">HLS</h3>
                     <div class="paragraph-small">(tahun)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart18" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx18 = document.getElementById('myChart18').getContext('2d');
-        const labels18 = ['2021', '2022']
-        const data18 = {
-            labels: labels18,
-            datasets: [
-                {
-                    label: 'HLS',
-                    data: [123123, 23412],
-                    borderColor: '#FFB200',
-                    fill: 'start',
-                    backgroundColor: '#FFF0CC',
-                },
-            ]
-        };
-        const config18 = {
-            type: 'line',
-            data: data18,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart18 = new Chart(ctx18, config18);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="HLS-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_2d4a4fd2-34fe-646e-b048-1df27e513dcf-ec0da9ff" class="bar-content short">
@@ -1385,56 +340,8 @@
                     <h3 class="heading-xs medium">RLS</h3>
                     <div class="paragraph-small">(tahun)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart19" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx19 = document.getElementById('myChart19').getContext('2d');
-        const labels19 = ['2021', '2022']
-        const data19 = {
-            labels: labels19,
-            datasets: [
-                {
-                    label: 'RLS',
-                    data: [123123, 23412],
-                    borderColor: '#4339F2',
-                    fill: 'start',
-                    backgroundColor: '#D9D7FC',
-                },
-            ]
-        };
-        const config19 = {
-            type: 'line',
-            data: data19,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart19 = new Chart(ctx19, config19);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="RLS-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-ca91e47f-9597-b78e-58cd-3ea6bc01f216-ec0da9ff" class="bar-content short">
@@ -1442,56 +349,8 @@
                     <h3 class="heading-xs medium">Pengeluaran per Kapita</h3>
                     <div class="paragraph-small">(Rp 000)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart20" style="height:240px; width:100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx20 = document.getElementById('myChart20').getContext('2d');
-        const labels20 = ['2021', '2022']
-        const data20 = {
-            labels: labels20,
-            datasets: [
-                {
-                    label: 'Pengeluaran per Kapita',
-                    data: [123123, 23412],
-                    borderColor: '#FF3A29',
-                    fill: 'start',
-                    backgroundColor: '#FFD8D4',
-                },
-            ]
-        };
-        const config20 = {
-            type: 'line',
-            data: data20,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart20 = new Chart(ctx20, config20);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="Pengeluaran_per_Kapita-chart" style="max-height:320px; width:100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-ecc24572-4f9f-65ce-5185-947ceb5056fc-ec0da9ff" class="bar-content linebar">
@@ -2352,6 +1211,10 @@ const config25 = {
       </div>
     </div>
   </div>
+  <script>
+    var baseUrl = '<?= site_url() ?>';
+    var assetsUrl = '<?= base_url('assets/') ?>';
+  </script>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=633b251b96dff4c8a7043d93" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="<?= base_url('assets/js/clients-dashboard-pka.js') ?>" type="text/javascript"></script>
   <script src="<?= base_url('assets/js/custom.js') ?>" type="text/javascript"></script>
