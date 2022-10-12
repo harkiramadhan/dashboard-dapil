@@ -213,10 +213,10 @@ class Upload extends CI_Controller{
                         'APK_SD' => $sheetData[$row]['AC'],
                         'APK_SMP' => $sheetData[$row]['AD'],
                         'APK_SMA' => $sheetData[$row]['AE'],
-                        'APM_SD' => $sheetData[$row]['AF'],
-                        'APM_SMP' => $sheetData[$row]['AG'],
-                        'APM_SMA' => $sheetData[$row]['AH'],
-                        'DBH_CHT' => $sheetData[$row]['AI'],
+                        'DBH_CHT' => $sheetData[$row]['AF'],
+                        'APM_SD' => $sheetData[$row]['AG'],
+                        'APM_SMP' => $sheetData[$row]['AH'],
+                        'APM_SMA' => $sheetData[$row]['AI'],
                     ];
                     $cekData = $this->db->get_where('data', [
                         'provinsi_id' => $dapil->provinsi_id,
