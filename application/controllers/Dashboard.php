@@ -213,7 +213,6 @@ class Dashboard extends CI_Controller{
         ];
 
         $this->output->set_content_type('application/json')->set_output(json_encode($result));
-        // $this->output->enable_profiler(TRUE);
     }
 
     function ajaxLineChart(){
@@ -224,7 +223,7 @@ class Dashboard extends CI_Controller{
         $dapil = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
 
         $getKabupaten = $this->db->select('id, kabupaten')->order_by('kabupaten', "ASC")->get_where('kabupaten', ['dapil' => $dapil]);
-        $rangeTahun = range(date('Y', strtotime('-1 year')), date('Y'));
+        $rangeTahun = range(date('Y', strtotime('-2 year')), date('Y', strtotime('-1 year')));
 
         $datasets = [];
         $total = [];
@@ -308,6 +307,36 @@ class Dashboard extends CI_Controller{
                                     ])->get()->row();
                 array_push($total, $getData->total);
             }
+        }elseif($type == 'Pend Miskin'){
+            $borderColor = '#FFB200';
+            $backgroundColor = '#FFF0CC';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(Pend_Miskin) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'Rata Rata Pend Miskin'){
+            $borderColor = '#4339F2';
+            $backgroundColor = '#D9D7FC';
+            
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(Jml_Pend_Miskin_ribu_jiwa) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
         }
 
         $datasets[] = [
@@ -325,5 +354,97 @@ class Dashboard extends CI_Controller{
 
         $this->output->set_content_type('application/json')->set_output(json_encode($result));
         // $this->output->enable_profiler(TRUE);
+    }
+
+    function ajaxBarChartBolder(){
+        $type = $this->input->get('type', TRUE);
+        $bidang = $this->input->get('bidang', TRUE);
+        $tahun = $this->input->get('tahun', TRUE);
+        $provinsiid = $this->input->get('provinsiid', TRUE);
+        $dapil = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
+
+        $getKabupaten = $this->db->select('id, kabupaten')->order_by('kabupaten', "ASC")->get_where('kabupaten', ['dapil' => $dapil]);
+        $rangeTahun = range(2020, 2021);
+
+        $datasets = [];
+        foreach($rangeTahun as $rt){
+            if($rt == 2020){      
+                $color = '#5570F1';
+            }elseif($rt == 2021){
+                $color = '#FFB200';
+            }else{
+                $color = '#FFCC91';
+            }
+
+            $getData = [];
+            $total = [];
+            $kabupaten = [];
+
+            foreach($getKabupaten->result() as $k){
+                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                    $this->db->where('bidang', $bidang);
+                }
+
+                if($type == 'IPM per Kabupaten/Kota'){
+                    $getData = $this->db->select('SUM(IPM) as total')
+                                        ->from('data d')
+                                        ->where([
+                                            'd.provinsi_id' => $provinsiid, 
+                                            'd.tahun' => $rt,
+                                            'd.kabupaten_id' => $k->id
+                                        ])->get()->row();
+                    array_push($total, $getData->total);
+                }elseif($type == 'TPAK'){
+                    $getData = $this->db->select('SUM(TPAK) as total')
+                                        ->from('data d')
+                                        ->where([
+                                            'd.provinsi_id' => $provinsiid, 
+                                            'd.tahun' => $rt,
+                                            'd.kabupaten_id' => $k->id
+                                        ])->get()->row();
+                    array_push($total, $getData->total);
+                }elseif($type == 'TPT'){
+                    $getData = $this->db->select('SUM(TPT) as total')
+                                        ->from('data d')
+                                        ->where([
+                                            'd.provinsi_id' => $provinsiid, 
+                                            'd.tahun' => $rt,
+                                            'd.kabupaten_id' => $k->id
+                                        ])->get()->row();
+                    array_push($total, $getData->total);
+                }elseif($type == 'Jml Pend Miskin'){
+                    $getData = $this->db->select('SUM(Jml_Pend_Miskin_ribu_jiwa) as total')
+                                        ->from('data d')
+                                        ->where([
+                                            'd.provinsi_id' => $provinsiid, 
+                                            'd.tahun' => $rt,
+                                            'd.kabupaten_id' => $k->id
+                                        ])->get()->row();
+                    array_push($total, $getData->total);
+                }
+
+                array_push($kabupaten, $k->kabupaten);
+            }
+
+            $datasets[] = [
+                'label'=> $rt,
+                'data'=> $total,
+                'borderColor'=> $color,
+                'backgroundColor'=> $color,
+                'width'=> 16,
+                'borderWidth'=> 0,
+                'borderRadius'=> 1.7976931348623157e+308,
+                'borderSkipped'=> false,
+            ];
+        }
+        
+        $result = [
+            'labels' => $kabupaten,
+            'datasets' => $datasets
+        ];
+
+        $this->output->set_content_type('application/json')->set_output(json_encode($result));
+        // $this->output->enable_profiler(TRUE);
+        
     }
 }

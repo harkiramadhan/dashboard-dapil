@@ -54,8 +54,15 @@ function loadChart(){
     loadLineChart('AHH', 'AHH-chart')
     loadLineChart('HLS', 'HLS-chart')
     loadLineChart('RLS', 'RLS-chart')
-
     loadLineChart('Pengeluaran per Kapita', 'Pengeluaran_per_Kapita-chart')
+
+    loadBarChartBolder('IPM per Kabupaten/Kota', 'IPM_per_Kabupaten_Kota-chart')
+    loadBarChartBolder('TPAK', 'TPAK-chart')
+    loadBarChartBolder('TPT', 'TPT-chart')
+
+    loadLineChart('Pend Miskin', 'Pend_Miskin-chart')
+    loadBarChartBolder('Jml Pend Miskin', 'Jml_Pend_Miskin-chart')
+    loadLineChart('Rata Rata Pend Miskin', 'Rata_Rata_Pend_Miskin-chart')
 }
 
 function loadBarChart(type, chartid){
@@ -179,6 +186,67 @@ function loadLineChart(type, chartid){
                 },
             };
             const myChartLine = new Chart(ctxLine, configLine);
+        }
+    })
+}
+
+function loadBarChartBolder(type, chartid){
+    $.ajax({
+        url: baseUrl + 'dashboard/ajaxBarChartBolder',
+        type: 'get',
+        data: {
+            type: type, 
+            bidang: $('#bidang').text(),
+            tahun: $('#tahun').text(),
+            provinsiid: provinsiid,
+            dapil: $('.filter-dapil.opened').text()
+        },
+        beforeSend: function(){
+            $('#' + chartid).html(loader)
+        },
+        success: function(res){
+            let charBarBolder = Chart.getChart(chartid)
+            if(charBarBolder != undefined){
+                charBarBolder.destroy()
+            }
+
+            const ctxBarBolder = document.getElementById(chartid).getContext('2d');
+            const labelsBarBolder = res.labels
+            const dataBarBolder = {
+                labels: labelsBarBolder,
+                datasets: res.datasets
+            };
+            const configBarBolder = {
+                type: 'bar',
+                data: dataBarBolder,
+                options: {
+                    barPercentage: 0.3,
+                    responsive: true,
+                    scales: {
+                        y: {
+                            grid: {
+                                display: false,
+                                color: "rgba(255,99,132,0.2)"
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false,
+                            text: ''
+                        }
+                    }
+                },
+            };
+            const myChartBarBolder = new Chart(ctxBarBolder, configBarBolder);
         }
     })
 }

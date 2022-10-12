@@ -359,67 +359,8 @@
                     <h3 class="heading-xs medium">IPM per Kabupaten/Kota</h3>
                     <div class="paragraph-small">(dalam %)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart21" style="height: 480px; width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-	const ctx21 = document.getElementById('myChart21').getContext('2d');
-	const labels21 = ['Banyuwangi', 'Bondowoso', 'Situbondo']
-	const data21 = {
-  	labels: labels21,
-  	datasets: [
-    	{
-      	label: '2020',
-      	data: [70.62, 66.43, 67.38],
-      	borderColor: '#5570F1',
-      	backgroundColor: '#5570F1',
-        width: 16,
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	},
-    	{
-      	label: '2021',
-      	data: [71.38, 66.59, 67.78],
-      	borderColor: '#FFCC91',
-      	backgroundColor: '#FFCC91',
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	}
-  	]
-	};
-const config21 = {
-  type: 'bar',
-  data: data21,
-  options: {
-  	barPercentage: 0.3,
-    responsive: true,
-    scales: {
-    y: {
-      grid: {
-        display: false,
-        color: "rgba(255,99,132,0.2)"
-      }
-    },
-    x: {
-      grid: {
-        display: false
-      }
-    }
-  },
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: false,
-        text: ''
-      }
-    }
-  },
-};
-  const myChart21 = new Chart(ctx21, config21);
-</script>
+                  <div class="w-embed w-script">
+                    <canvas id="IPM_per_Kabupaten_Kota-chart" style="max-height: 480px; width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_9637b692-add7-36b6-6471-4fc643c37f84-ec0da9ff" class="w-layout-grid grid-2-content">
@@ -428,67 +369,8 @@ const config21 = {
                       <h3 class="heading-xxs medium">Tingkat Partisipasi Angkatan Kerja per Kab/Kota</h3>
                       <div class="paragraph-small">(dalam %)</div>
                     </div>
-                    <div class="w-embed w-script"><canvas id="myChart22" style="height: 320px; width: 100%;"></canvas>
-                      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                      <script>
-	const ctx22 = document.getElementById('myChart22').getContext('2d');
-	const labels22 = ['Banyuwangi', 'Bondowoso', 'Situbondo']
-	const data22 = {
-  	labels: labels22,
-  	datasets: [
-    	{
-      	label: '2020',
-      	data: [70.62, 66.43, 67.38],
-      	borderColor: '#5570F1',
-      	backgroundColor: '#5570F1',
-        width: 16,
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	},
-    	{
-      	label: '2021',
-      	data: [71.38, 66.59, 67.78],
-      	borderColor: '#FFCC91',
-      	backgroundColor: '#FFCC91',
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	}
-  	]
-	};
-const config22 = {
-  type: 'bar',
-  data: data22,
-  options: {
-  	barPercentage: 0.3,
-    responsive: true,
-    scales: {
-    y: {
-      grid: {
-        display: false,
-        color: "rgba(255,99,132,0.2)"
-      }
-    },
-    x: {
-      grid: {
-        display: false
-      }
-    }
-  },
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: false,
-        text: ''
-      }
-    }
-  },
-};
-  const myChart22 = new Chart(ctx22, config22);
-</script>
+                    <div class="w-embed w-script">
+                      <canvas id="TPAK-chart" style="height: 320px; width: 100%;"></canvas>
                     </div>
                   </div>
                   <div id="w-node-cb3dd79d-c318-1729-812b-c67266ce91d3-ec0da9ff" class="bar-content linebar">
@@ -496,67 +378,8 @@ const config22 = {
                       <h3 class="heading-xxs medium">Tingkat Pengangguran per Kab/Kota</h3>
                       <div class="paragraph-small">(dalam %)</div>
                     </div>
-                    <div class="w-embed w-script"><canvas id="myChart23" style="height: 320px; width: 100%;"></canvas>
-                      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                      <script>
-	const ctx23 = document.getElementById('myChart23').getContext('2d');
-	const labels23 = ['Banyuwangi', 'Bondowoso', 'Situbondo']
-	const data23 = {
-  	labels: labels23,
-  	datasets: [
-    	{
-      	label: '2020',
-      	data: [70.62, 66.43, 67.38],
-      	borderColor: '#5570F1',
-      	backgroundColor: '#5570F1',
-        width: 16,
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	},
-    	{
-      	label: '2021',
-      	data: [71.38, 66.59, 67.78],
-      	borderColor: '#FFCC91',
-      	backgroundColor: '#FFCC91',
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	}
-  	]
-	};
-const config23 = {
-  type: 'bar',
-  data: data23,
-  options: {
-  	barPercentage: 0.3,
-    responsive: true,
-    scales: {
-    y: {
-      grid: {
-        display: false,
-        color: "rgba(255,99,132,0.2)"
-      }
-    },
-    x: {
-      grid: {
-        display: false
-      }
-    }
-  },
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: false,
-        text: ''
-      }
-    }
-  },
-};
-  const myChart23 = new Chart(ctx23, config23);
-</script>
+                    <div class="w-embed w-script">
+                      <canvas id="TPT-chart" style="height: 320px; width: 100%;"></canvas>
                     </div>
                   </div>
                 </div>
@@ -565,67 +388,8 @@ const config23 = {
                     <h3 class="heading-xxs medium">Jumlah Penduduk Miskin per Kab/Kota</h3>
                     <div class="paragraph-small">(ribu jiwa)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart25" style="height: 320px; width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-	const ctx25 = document.getElementById('myChart25').getContext('2d');
-	const labels25 = ['Banyuwangi', 'Bondowoso', 'Situbondo']
-	const data25 = {
-  	labels: labels25,
-  	datasets: [
-    	{
-      	label: '2020',
-      	data: [70.62, 66.43, 67.38],
-      	borderColor: '#5570F1',
-      	backgroundColor: '#5570F1',
-        width: 16,
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	},
-    	{
-      	label: '2021',
-      	data: [71.38, 66.59, 67.78],
-      	borderColor: '#FFCC91',
-      	backgroundColor: '#FFCC91',
-      	borderWidth: 0,
-      	borderRadius: Number.MAX_VALUE,
-      	borderSkipped: false,
-    	}
-  	]
-	};
-const config25 = {
-  type: 'bar',
-  data: data25,
-  options: {
-  	barPercentage: 0.3,
-    responsive: true,
-    scales: {
-    y: {
-      grid: {
-        display: false,
-        color: "rgba(255,99,132,0.2)"
-      }
-    },
-    x: {
-      grid: {
-        display: false
-      }
-    }
-  },
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: false,
-        text: ''
-      }
-    }
-  },
-};
-  const myChart25 = new Chart(ctx25, config25);
-</script>
+                  <div class="w-embed w-script">
+                    <canvas id="Jml_Pend_Miskin-chart" style="max-height:300px;width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-c447a6c9-4533-0509-8e2b-5dbcab5927c8-ec0da9ff" class="bar-content short">
@@ -633,112 +397,16 @@ const config25 = {
                     <h3 class="heading-xxs medium">Rata-rata Jumlah Penduduk Miskin </h3>
                     <div class="paragraph-small">(ribu jiwa)</div>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart24" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx24 = document.getElementById('myChart24').getContext('2d');
-        const labels24 = ['2021', '2022']
-        const data24 = {
-            labels: labels24,
-            datasets: [
-                {
-                    label: 'Rata-rata Jumlah Penduduk Miskin',
-                    data: [123123, 23412],
-                    borderColor: '#4339F2',
-                    fill: 'start',
-                    backgroundColor: '#D9D7FC',
-                },
-            ]
-        };
-        const config24 = {
-            type: 'line',
-            data: data24,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart24 = new Chart(ctx24, config24);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="Rata_Rata_Pend_Miskin-chart" style="max-height:300px; width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_375240f1-9e01-5fc7-c7e4-2bf953260e5e-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
                     <h3 class="heading-xxs medium">Rata-rata % Penduduk Miskin</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart26" style="height:240px; width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx26 = document.getElementById('myChart26').getContext('2d');
-        const labels26 = ['2021', '2022']
-        const data26 = {
-            labels: labels26,
-            datasets: [
-                {
-                    label: 'Rata-rata % Penduduk Miskin',
-                    data: [123123, 23412],
-                    borderColor: '#FFB200',
-                    fill: 'start',
-                    backgroundColor: '#FFF0CC',
-                },
-            ]
-        };
-        const config26 = {
-            type: 'line',
-            data: data26,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart26 = new Chart(ctx26, config26);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="Pend_Miskin-chart" style="height: 320px; width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_1f52cd19-39e5-4bc4-5a26-7505501d0873-ec0da9ff" class="bar-content short">
