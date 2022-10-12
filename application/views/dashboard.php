@@ -313,6 +313,7 @@
                   <div class="w-embed w-script">
                     <canvas id="IPM-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata  Indeks Pembangunan Manusia (IPM) daerah pemilihan (Dapil), dihitung dari  jumlah IPM daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_22d40952-1588-ce49-d597-342f996fcc20-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -323,6 +324,7 @@
                   <div class="w-embed w-script">
                     <canvas id="AHH-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata  Angka Harapan Hidup (AHH) daerah pemilihan (Dapil), dihitung dari jumlah AHH  daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-ea25fa97-d09c-13c6-5ffe-6bc8a7131284-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -333,6 +335,7 @@
                   <div class="w-embed w-script">
                     <canvas id="HLS-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata angka Harapan Lama Sekolah (HLS) daerah pemilihan (Dapil), dihitung dari jumlah HLS daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_2d4a4fd2-34fe-646e-b048-1df27e513dcf-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -343,6 +346,7 @@
                   <div class="w-embed w-script">
                     <canvas id="RLS-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata angka Rerata Lama Sekolah (RLS) daerah pemilihan (Dapil), dihitung dari jumlah RLS daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-ca91e47f-9597-b78e-58cd-3ea6bc01f216-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -352,6 +356,7 @@
                   <div class="w-embed w-script">
                     <canvas id="Pengeluaran_per_Kapita-chart" style="max-height:320px; width:100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata angka Pengeluaran Per Kapita daerah pemilihan (Dapil), dihitung dari jumlah Pengeluaran Per Kapita daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-ecc24572-4f9f-65ce-5185-947ceb5056fc-ec0da9ff" class="bar-content linebar">
                   <div class="graph-title">
@@ -400,6 +405,7 @@
                   <div class="w-embed w-script">
                     <canvas id="Rata_Rata_Pend_Miskin-chart" style="max-height:300px; width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata angka Rerata Jumlah Penduduk Miskin daerah pemilihan (Dapil), dihitung dari Jumlah Penduduk Miskin daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_375240f1-9e01-5fc7-c7e4-2bf953260e5e-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -408,6 +414,7 @@
                   <div class="w-embed w-script">
                     <canvas id="Pend_Miskin-chart" style="max-height: 320px; width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata angka Persentase Jumlah Penduduk Miskin daerah pemilihan (Dapil), dihitung dari Jumlah Penduduk Miskin daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_1f52cd19-39e5-4bc4-5a26-7505501d0873-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -417,6 +424,7 @@
                   <div class="w-embed w-script">
                     <canvas id="APK_PAUD-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Kasar (APK) Pendidikan Anak Usia Dini (PAUD) daerah pemilihan (Dapil), dihitung dari jumlah APK PAUD daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_3b5d8742-3d44-2d1e-07b5-cdfe9cb6614d-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -426,6 +434,7 @@
                   <div class="w-embed w-script">
                     <canvas id="APK_SD-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Kasar (APK) Sekolah Dasar (SD) daerah pemilihan (Dapil), dihitung dari jumlah APK SD daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-b083bf0f-b0b8-35e9-b451-bfcd61b21d2d-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -435,15 +444,17 @@
                   <div class="w-embed w-script">
                     <canvas id="APK_SMP-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Kasar (APK) Sekolah Menengah Pertama (SMP) daerah pemilihan (Dapil), dihitung dari jumlah APK SMP daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_218c9880-97f5-9a84-2cd4-df84f73d02ae-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
                     <div data-tippy-content="Angka Partisipasi Kasar Sekolah Menengah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
-                    <h3 class="heading-xxs medium">APK SMA</h3>
+                    <h3 class="heading-xxs medium">APK SM</h3>
                   </div>
                   <div class="w-embed w-script">
                     <canvas id="APK_SMA-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Kasar (APK) Sekolah Menengah (SM) daerah pemilihan (Dapil), dihitung dari jumlah APK SM daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_85608af2-0897-e002-fc85-65e65f7ea0f4-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -453,6 +464,7 @@
                   <div class="w-embed w-script">
                     <canvas id="APM_SD-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Murni (APM) Sekolah Dasar (SD) daerah pemilihan (Dapil), dihitung dari jumlah APM SD daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_4d86c549-6244-6f5e-7ab7-d657f818c2c7-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -462,6 +474,7 @@
                   <div class="w-embed w-script">
                     <canvas id="APM_SMP-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Murni (APM) Sekolah Menengah Pertama (SMP) daerah pemilihan (Dapil), dihitung dari jumlah APM SMP daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
                 <div id="w-node-_314ab4b1-48e0-378a-ea8f-b0cdc4cc9215-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
@@ -471,6 +484,7 @@
                   <div class="w-embed w-script">
                     <canvas id="APM_SM-chart" style="width: 100%;"></canvas>
                   </div>
+                  <div class="graph-caption">Rata-rata Angka Partisipasi Murni (APM) Sekolah Menengah (SM) daerah pemilihan (Dapil), dihitung dari jumlah APM SM daerah dalam Dapil dibagi jumlah daerah dalam Dapil</div>
                 </div>
               </div>
             </div>
@@ -487,47 +501,8 @@
               </div>
             </div>
             <div class="table-wrapper">
-              <div class="w-embed">
-                <table id="table_dapil" class="display">
-                  <thead class="tableheader">
-                    <tr class="tablerow-noline">
-                      <th class="tablehead"></th>
-                      <th class="tablehead">2020</th>
-                      <th class="tablehead">2021</th>
-                      <th class="tablehead">2022</th>
-                      <th class="tablehead">2022</th>
-                      <th class="tablehead">2022</th>
-                    </tr>
-                  </thead>
-                  <thead class="tableheader">
-                    <tr class="tablerow-noline">
-                      <th class="tablehead"></th>
-                      <th class="tablehead"></th>
-                      <th class="tablehead"></th>
-                      <th class="tablehead">Banyuwangi</th>
-                      <th class="tablehead">Bondowoso</th>
-                      <th class="tablehead">Situbondo</th>
-                    </tr>
-                  </thead>
-                  <tbody class="tablebody">
-                    <tr class="tablerow">
-                      <td id="dataname" class="tabledataleft">DBH PPh</td>
-                      <td>123</td>
-                      <td>456</td>
-                      <td>789</td>
-                      <td>012</td>
-                      <td>345</td>
-                    </tr>
-                    <tr class="tablerow">
-                      <td id="dataname" class="tabledataleft">DBH PBB</td>
-                      <td>123</td>
-                      <td>456</td>
-                      <td>789</td>
-                      <td>012</td>
-                      <td>345</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="w-embed tbl-dapil" style="overflow-x: auto; max-width: 85vw">
+                
               </div>
             </div>
           </div>
@@ -547,34 +522,15 @@
     var baseUrl = '<?= site_url() ?>';
     var assetsUrl = '<?= base_url('assets/') ?>';
   </script>
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=633b251b96dff4c8a7043d93" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
   <script src="<?= base_url('assets/js/clients-dashboard-pka.js') ?>" type="text/javascript"></script>
   <script src="<?= base_url('assets/js/custom.js') ?>" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <!-- Tooltip Scripts & Settings -->
-  <script src="https://unpkg.com/popper.js@1"></script>
-  <script src="https://unpkg.com/tippy.js@4"></script>
-  <script>
-tippy('.tooltip', {        
- animation: 'scale-subtle',    
- duration: 200,      
- arrow: true,          
- delay: [0, 50],      
- arrowType: 'sharp',  
- theme: 'material',        
- maxWidth: 220,    
- interactive: true,
-})
-</script>
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script>
-$(document).ready(function() {
-    $('#table_dapil').DataTable();
-} );
-$('#table_dapil').dataTable( {
-	"lengthChange": false
-  } );
-</script>
 
 </body>
 </html>

@@ -382,7 +382,7 @@ class Dashboard extends CI_Controller{
                                     ])->get()->row();
                 array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
-        }elseif($type == 'APK SMA'){
+        }elseif($type == 'APK SM'){
             $borderColor = '#4339F2';
             $backgroundColor = '#D9D7FC';
 
@@ -416,9 +416,6 @@ class Dashboard extends CI_Controller{
             $borderColor = '#02A0FC';
             $backgroundColor = '#CCECFE';
 
-            $borderColor = '#34B53A';
-            $backgroundColor = '#D6F0D8';
-
             foreach($rangeTahun as $rt){
                 $getData = $this->db->select('SUM(APM_SMP) as total')
                                     ->from('data d')
@@ -433,9 +430,6 @@ class Dashboard extends CI_Controller{
         }elseif($type == 'APM SM'){
             $borderColor = '#4339F2';
             $backgroundColor = '#D9D7FC';
-
-            $borderColor = '#34B53A';
-            $backgroundColor = '#D6F0D8';
 
             foreach($rangeTahun as $rt){
                 $getData = $this->db->select('SUM(APM_SMA) as total')
@@ -557,5 +551,468 @@ class Dashboard extends CI_Controller{
         $this->output->set_content_type('application/json')->set_output(json_encode($result));
         // $this->output->enable_profiler(TRUE);
         
+    }
+    
+    function tbl(){
+        $provinsiid = $this->input->get('provinsiid', TRUE);
+        $dapil = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
+        $getKabupaten = $this->db->select('id, kabupaten')->order_by('kabupaten', "ASC")->get_where('kabupaten', ['dapil' => $dapil]);
+        $rangeTahun = range(2020, date('Y'));
+        $bidang = $this->input->get('bidang', TRUE);
+
+        ?>
+            <table id="table_dapil" class="display nowrap cell-border stripe">
+                <thead class="tableheader">
+                    <tr class="tablerow-noline">
+                        <th class="tablehead" rowspan="2" style="background-color: white"></th>
+                        <?php foreach($rangeTahun as $rt){ 
+                            if($rt == 2020){      
+                                $backgroundColor = '#5570F1';
+                            }elseif($rt == 2021){
+                                $backgroundColor = '#5FAE65';
+                            }else{
+                                $backgroundColor = '#FFA640';
+                            }    
+                        ?>
+                            <th class="tablehead" style="background-color: <?= $backgroundColor ?>; color: white" colspan="<?= $getKabupaten->num_rows() ?>" align="center"><?= $rt ?></th>
+                        <?php } ?>
+                    </tr>
+                    <tr class="tablerow-noline">
+                        <?php 
+                            foreach($rangeTahun as $rts){ 
+                                if($rts == 2020){      
+                                    $backgroundColor = '#5570F1';
+                                }elseif($rts == 2021){
+                                    $backgroundColor = '#5FAE65';
+                                }else{
+                                    $backgroundColor = '#FFA640';
+                                }  
+                                foreach($getKabupaten->result() as $kbr){ 
+                        ?>
+                            <th align="center" style="background-color: <?= $backgroundColor ?>; color: white"><?= $kbr->kabupaten ?></th>
+                        <?php }} ?>
+                    </tr>
+                </thead>
+                <tbody class="tablebody">
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH PPh</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_PPh) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH PBB</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_PBB) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH CHT</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_CHT) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Migas</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_SDA_Migas) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Minerba</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_SDA_Minerba) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Kehutanan</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_SDA_Kehutanan) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Perikanan</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_SDA_Perikanan) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Panas Bumi</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DBH_SDA_Panas_Bumi) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DAU</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DAU) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Fisik Reguler</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DAK_Fisik_Reguler) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Fisik Penugasan</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DAK_Fisik_Penugasan) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Fisik Afirmasi</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DAK_Fisik_Afirmasi) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Non Fisik</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DAK_Non_Fisik) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">DID</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(DID) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                <tr class="tablerow-noline">
+                    <th id="dataname" class="tabledataleft" style="background-color: white">Dana Desa</th>
+                    <?php 
+                        foreach($rangeTahun as $rts){ 
+                            if($rts == 2020){      
+                                $backgroundColor = '#DBDEEE';
+                            }elseif($rts == 2021){
+                                $backgroundColor = '#E5F0E6';
+                            }else{
+                                $backgroundColor = '#FFF2E2';
+                            }  
+                            foreach($getKabupaten->result() as $kbr){ 
+                                if($bidang != 'Bidang' && $bidang != 'Semua Bidang'){
+                                    $this->db->where('bidang', $bidang);
+                                }
+                                $cekData = $this->db->select('SUM(Dana_Desa) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rts,
+                                        'd.kabupaten_id' => $kbr->id
+                                    ])->get()->row();
+                    ?>
+                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                    <?php }} ?>
+                </tr>
+                </tbody>
+            </table>
+
+            <script>
+                $('#table_dapil').dataTable({
+                    aaSorting: [],
+                    lengthChange: false,
+                    bPaginate: false,
+                    scrollX: true,
+                    fixedColumns:   {
+                        left: 1
+                    }
+                })
+            </script>
+        <?php
     }
 }

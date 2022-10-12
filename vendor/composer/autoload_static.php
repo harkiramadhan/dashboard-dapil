@@ -30,6 +30,10 @@ class ComposerStaticInit5ae9b47e47ef57cabd22883a7ade5ee2
             'PhpParser\\' => 10,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
         ),
+        'O' => 
+        array (
+            'Ozdemir\\Datatables\\' => 19,
+        ),
         'M' => 
         array (
             'MyCLabs\\Enum\\' => 13,
@@ -61,8 +65,8 @@ class ComposerStaticInit5ae9b47e47ef57cabd22883a7ade5ee2
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -75,6 +79,10 @@ class ComposerStaticInit5ae9b47e47ef57cabd22883a7ade5ee2
         'PhpOffice\\PhpSpreadsheet\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
+        ),
+        'Ozdemir\\Datatables\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ozdemir/datatables/src',
         ),
         'MyCLabs\\Enum\\' => 
         array (

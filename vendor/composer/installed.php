@@ -3,7 +3,7 @@
         'name' => 'codeigniter/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b52419be3c3d68dd29dd5efe21dfb15d5425c747',
+        'reference' => '1b4eba4705ce0da939d79f6875c5e540739e08c8',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'codeigniter/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b52419be3c3d68dd29dd5efe21dfb15d5425c747',
+            'reference' => '1b4eba4705ce0da939d79f6875c5e540739e08c8',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -99,6 +99,15 @@
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'ozdemir/datatables' => array(
+            'pretty_version' => '2.3.6',
+            'version' => '2.3.6.0',
+            'reference' => '94f050f9e29ed3f9a7b6718c535523209c4fdf20',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ozdemir/datatables',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.3',

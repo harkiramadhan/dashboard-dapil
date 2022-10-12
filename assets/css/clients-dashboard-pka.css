@@ -57,6 +57,13 @@ ol {
   padding-left: 40px;
 }
 
+.graph-caption {
+  margin-top: 12px;
+  color: #6e7079;
+  font-size: 13px;
+  line-height: 17px;
+}
+
 .section {
   padding-top: 100px;
   padding-bottom: 100px;

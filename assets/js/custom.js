@@ -67,11 +67,12 @@ function loadChart(){
     loadLineChart('APK PAUD', 'APK_PAUD-chart')
     loadLineChart('APK SD', 'APK_SD-chart')
     loadLineChart('APK SMP', 'APK_SMP-chart')
-    loadLineChart('APK SMA', 'APK_SMA-chart')
+    loadLineChart('APK SM', 'APK_SMA-chart')
 
     loadLineChart('APM SD', 'APM_SD-chart')
     loadLineChart('APM SMP', 'APM_SMP-chart')
     loadLineChart('APM SM', 'APM_SM-chart')
+    loadTable()
 }
 
 function loadBarChart(type, chartid){
@@ -259,3 +260,33 @@ function loadBarChartBolder(type, chartid){
         }
     })
 }
+
+function loadTable(){
+    $.ajax({
+        url: baseUrl + 'dashboard/tbl',
+        type: 'get',
+        data: {
+            bidang: $('#bidang').text(),
+            tahun: $('#tahun').text(),
+            provinsiid: provinsiid,
+            dapil: $('.filter-dapil.opened').text()
+        },
+        beforeSend: function(){
+    
+        },
+        success: function(res){
+            $('.tbl-dapil').html(res)
+        }
+    })
+}
+
+tippy('.tooltip', {        
+    animation: 'scale-subtle',    
+    duration: 200,      
+    arrow: true,          
+    delay: [0, 50],      
+    arrowType: 'sharp',  
+    theme: 'material',        
+    maxWidth: 220,    
+    interactive: true,
+})
