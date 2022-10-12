@@ -60,9 +60,11 @@ function loadChart(){
     loadBarChartBolder('TPAK', 'TPAK-chart')
     loadBarChartBolder('TPT', 'TPT-chart')
 
-    loadLineChart('Pend Miskin', 'Pend_Miskin-chart')
+    loadLineChart('Rata Rata % Pend Miskin', 'Pend_Miskin-chart')
     loadBarChartBolder('Jml Pend Miskin', 'Jml_Pend_Miskin-chart')
-    loadLineChart('Rata Rata Pend Miskin', 'Rata_Rata_Pend_Miskin-chart')
+    loadLineChart('Rata Rata Juml Pend Miskin', 'Rata_Rata_Pend_Miskin-chart')
+
+    loadLineChart('APK PAUD', 'APK_PAUD-chart')
 }
 
 function loadBarChart(type, chartid){

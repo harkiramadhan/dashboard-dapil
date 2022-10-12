@@ -414,56 +414,8 @@
                     <div data-tippy-content="Angka Partisipasi Kasar PAUD" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xxs medium">APK PAUD</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart27" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx27 = document.getElementById('myChart27').getContext('2d');
-        const labels27 = ['2021', '2022']
-        const data27 = {
-            labels: labels27,
-            datasets: [
-                {
-                    label: 'APK PAUD',
-                    data: [123123, 23412],
-                    borderColor: '#FF3A29',
-                    fill: 'start',
-                    backgroundColor: '#FFD8D4',
-                },
-            ]
-        };
-        const config27 = {
-            type: 'line',
-            data: data27,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart27 = new Chart(ctx27, config27);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APK_PAUD-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_3b5d8742-3d44-2d1e-07b5-cdfe9cb6614d-ec0da9ff" class="bar-content short">

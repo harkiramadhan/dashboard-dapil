@@ -245,7 +245,7 @@ class Dashboard extends CI_Controller{
                                         'd.tahun' => $rt,
                                         'k.dapil' => $dapil
                                     ])->get()->row();
-                array_push($total, $getData->total);
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
         }elseif($type == 'AHH'){
             $borderColor = '#02A0FC';
@@ -260,7 +260,7 @@ class Dashboard extends CI_Controller{
                                         'd.tahun' => $rt,
                                         'k.dapil' => $dapil
                                     ])->get()->row();
-                array_push($total, $getData->total);
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
         }elseif($type == 'HLS'){
             $borderColor = '#FFB200';
@@ -275,7 +275,7 @@ class Dashboard extends CI_Controller{
                                         'd.tahun' => $rt,
                                         'k.dapil' => $dapil
                                     ])->get()->row();
-                array_push($total, $getData->total);
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
         }elseif($type == 'RLS'){
             $borderColor = '#4339F2';
@@ -290,7 +290,7 @@ class Dashboard extends CI_Controller{
                                         'd.tahun' => $rt,
                                         'k.dapil' => $dapil
                                     ])->get()->row();
-                array_push($total, $getData->total);
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
         }elseif($type == 'Pengeluaran per Kapita'){
             $borderColor = '#FF3A29';
@@ -305,9 +305,9 @@ class Dashboard extends CI_Controller{
                                         'd.tahun' => $rt,
                                         'k.dapil' => $dapil
                                     ])->get()->row();
-                array_push($total, $getData->total);
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
-        }elseif($type == 'Pend Miskin'){
+        }elseif($type == 'Rata Rata % Pend Miskin'){
             $borderColor = '#FFB200';
             $backgroundColor = '#FFF0CC';
 
@@ -322,12 +322,27 @@ class Dashboard extends CI_Controller{
                                     ])->get()->row();
                 array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
-        }elseif($type == 'Rata Rata Pend Miskin'){
+        }elseif($type == 'Rata Rata Juml Pend Miskin'){
             $borderColor = '#4339F2';
             $backgroundColor = '#D9D7FC';
             
             foreach($rangeTahun as $rt){
                 $getData = $this->db->select('SUM(Jml_Pend_Miskin_ribu_jiwa) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'APK PAUD'){
+            $borderColor = '#FF3A29';
+            $backgroundColor = '#FFD8D4';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APK_PAUD) as total')
                                     ->from('data d')
                                     ->join('kabupaten k', 'd.kabupaten_id = k.id')
                                     ->where([
