@@ -65,6 +65,13 @@ function loadChart(){
     loadLineChart('Rata Rata Juml Pend Miskin', 'Rata_Rata_Pend_Miskin-chart')
 
     loadLineChart('APK PAUD', 'APK_PAUD-chart')
+    loadLineChart('APK SD', 'APK_SD-chart')
+    loadLineChart('APK SMP', 'APK_SMP-chart')
+    loadLineChart('APK SMA', 'APK_SMA-chart')
+
+    loadLineChart('APM SD', 'APM_SD-chart')
+    loadLineChart('APM SMP', 'APM_SMP-chart')
+    loadLineChart('APM SM', 'APM_SM-chart')
 }
 
 function loadBarChart(type, chartid){

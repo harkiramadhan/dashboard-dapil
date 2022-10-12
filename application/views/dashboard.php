@@ -406,7 +406,7 @@
                     <h3 class="heading-xxs medium">Rata-rata % Penduduk Miskin</h3>
                   </div>
                   <div class="w-embed w-script">
-                    <canvas id="Pend_Miskin-chart" style="height: 320px; width: 100%;"></canvas>
+                    <canvas id="Pend_Miskin-chart" style="max-height: 320px; width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_1f52cd19-39e5-4bc4-5a26-7505501d0873-ec0da9ff" class="bar-content short">
@@ -423,56 +423,8 @@
                     <div data-tippy-content="Angka Partisipasi Kasar Sekolah Dasar" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xxs medium">APK SD</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart28" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx28 = document.getElementById('myChart28').getContext('2d');
-        const labels28 = ['2021', '2022']
-        const data28 = {
-            labels: labels28,
-            datasets: [
-                {
-                    label: 'APK SD',
-                    data: [123123, 23412],
-                    borderColor: '#34B53A',
-                    fill: 'start',
-                    backgroundColor: '#D6F0D8',
-                },
-            ]
-        };
-        const config28 = {
-            type: 'line',
-            data: data28,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart28 = new Chart(ctx28, config28);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APK_SD-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-b083bf0f-b0b8-35e9-b451-bfcd61b21d2d-ec0da9ff" class="bar-content short">
@@ -480,113 +432,17 @@
                     <div data-tippy-content="Angka Partisipasi Kasar Sekolah Menengah Pertama" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xxs medium">APK SMP</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart29" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx29 = document.getElementById('myChart29').getContext('2d');
-        const labels29 = ['2021', '2022']
-        const data29 = {
-            labels: labels29,
-            datasets: [
-                {
-                    label: 'APK SMP',
-                    data: [123123, 23412],
-                    borderColor: '#02A0FC',
-                    fill: 'start',
-                    backgroundColor: '#CCECFE',
-                },
-            ]
-        };
-        const config29 = {
-            type: 'line',
-            data: data29,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart29 = new Chart(ctx29, config29);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APK_SMP-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_218c9880-97f5-9a84-2cd4-df84f73d02ae-ec0da9ff" class="bar-content short">
                   <div class="graph-title">
                     <div data-tippy-content="Angka Partisipasi Kasar Sekolah Menengah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
-                    <h3 class="heading-xxs medium">APK SM</h3>
+                    <h3 class="heading-xxs medium">APK SMA</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart30" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx30 = document.getElementById('myChart30').getContext('2d');
-        const labels30 = ['2021', '2022']
-        const data30 = {
-            labels: labels30,
-            datasets: [
-                {
-                    label: 'APK SM',
-                    data: [123123, 23412],
-                    borderColor: '#4339F2',
-                    fill: 'start',
-                    backgroundColor: '#D9D7FC',
-                },
-            ]
-        };
-        const config30 = {
-            type: 'line',
-            data: data30,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart30 = new Chart(ctx30, config30);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APK_SMA-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_85608af2-0897-e002-fc85-65e65f7ea0f4-ec0da9ff" class="bar-content short">
@@ -594,56 +450,8 @@
                     <div data-tippy-content="Angka Partisipasi Murni Sekolah Dasar" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xxs medium">APM SD</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart31" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx31 = document.getElementById('myChart31').getContext('2d');
-        const labels31 = ['2021', '2022']
-        const data31 = {
-            labels: labels31,
-            datasets: [
-                {
-                    label: 'APK SD',
-                    data: [123123, 23412],
-                    borderColor: '#34B53A',
-                    fill: 'start',
-                    backgroundColor: '#D6F0D8',
-                },
-            ]
-        };
-        const config31 = {
-            type: 'line',
-            data: data31,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart31 = new Chart(ctx31, config31);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APM_SD-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_4d86c549-6244-6f5e-7ab7-d657f818c2c7-ec0da9ff" class="bar-content short">
@@ -651,56 +459,8 @@
                     <div data-tippy-content="Angka Partisipasi Murni Sekolah Menengah Pertama" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xxs medium">APM SMP</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart32" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx32 = document.getElementById('myChart32').getContext('2d');
-        const labels32 = ['2021', '2022']
-        const data32 = {
-            labels: labels32,
-            datasets: [
-                {
-                    label: 'APK SMP',
-                    data: [123123, 23412],
-                    borderColor: '#02A0FC',
-                    fill: 'start',
-                    backgroundColor: '#CCECFE',
-                },
-            ]
-        };
-        const config32 = {
-            type: 'line',
-            data: data32,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart32 = new Chart(ctx32, config32);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APM_SMP-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
                 <div id="w-node-_314ab4b1-48e0-378a-ea8f-b0cdc4cc9215-ec0da9ff" class="bar-content short">
@@ -708,56 +468,8 @@
                     <div data-tippy-content="Angka Partisipasi Murni Sekolah Menengah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xxs medium">APM SM</h3>
                   </div>
-                  <div class="w-embed w-script"><canvas id="myChart33" style="width: 100%;"></canvas>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script>
-        const ctx33 = document.getElementById('myChart33').getContext('2d');
-        const labels33 = ['2021', '2022']
-        const data33 = {
-            labels: labels33,
-            datasets: [
-                {
-                    label: 'APK SM',
-                    data: [123123, 23412],
-                    borderColor: '#4339F2',
-                    fill: 'start',
-                    backgroundColor: '#D9D7FC',
-                },
-            ]
-        };
-        const config33 = {
-            type: 'line',
-            data: data33,
-            options: {
-                plugins: {
-                    title: {
-                        display: false,
-                        text: '',
-                        font: {
-                            family: "'Poppins', sans-serif",
-                            size: 16
-                        }
-                    },
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true,
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        stacked: true
-                    }
-                },
-            },
-        };
-        const myChart33 = new Chart(ctx33, config33);
-    </script>
+                  <div class="w-embed w-script">
+                    <canvas id="APM_SM-chart" style="width: 100%;"></canvas>
                   </div>
                 </div>
               </div>

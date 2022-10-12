@@ -352,6 +352,102 @@ class Dashboard extends CI_Controller{
                                     ])->get()->row();
                 array_push($total, ($getData->total/$getKabupaten->num_rows()));
             }
+        }elseif($type == 'APK SD'){
+            $borderColor = '#34B53A';
+            $backgroundColor = '#D6F0D8';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APK_SD) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'APK SMP'){
+            $borderColor = '#02A0FC';
+            $backgroundColor = '#CCECFE';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APK_SMP) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'APK SMA'){
+            $borderColor = '#4339F2';
+            $backgroundColor = '#D9D7FC';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APK_SMA) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'APM SD'){
+            $borderColor = '#34B53A';
+            $backgroundColor = '#D6F0D8';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APM_SD) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'APM SMP'){
+            $borderColor = '#02A0FC';
+            $backgroundColor = '#CCECFE';
+
+            $borderColor = '#34B53A';
+            $backgroundColor = '#D6F0D8';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APM_SMP) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
+        }elseif($type == 'APM SM'){
+            $borderColor = '#4339F2';
+            $backgroundColor = '#D9D7FC';
+
+            $borderColor = '#34B53A';
+            $backgroundColor = '#D6F0D8';
+
+            foreach($rangeTahun as $rt){
+                $getData = $this->db->select('SUM(APM_SMA) as total')
+                                    ->from('data d')
+                                    ->join('kabupaten k', 'd.kabupaten_id = k.id')
+                                    ->where([
+                                        'd.provinsi_id' => $provinsiid, 
+                                        'd.tahun' => $rt,
+                                        'k.dapil' => $dapil
+                                    ])->get()->row();
+                array_push($total, ($getData->total/$getKabupaten->num_rows()));
+            }
         }
 
         $datasets[] = [
