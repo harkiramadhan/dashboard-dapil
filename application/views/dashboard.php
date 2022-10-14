@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  Last Published: Mon Oct 10 2022 13:38:14 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="633dbb106f6af822ec0da9ff" data-wf-site="633b251b96dff4c8a7043d93">
+<html data-wf-page="633dbb106f6af822ec0da9ff" data-wf-site="633b251b96dff4c8a7043d93" style="zoom:75% !important">
 <head>
   <meta charset="utf-8">
   <title>Dashboard</title>
@@ -501,7 +501,7 @@
               </div>
             </div>
             <div class="table-wrapper">
-              <div class="w-embed tbl-dapil" style="overflow-x: auto; max-width: 85vw">
+              <div class="w-embed tbl-dapil" style="overflow-x: auto; max-width: 80vw">
                 
               </div>
             </div>

@@ -49,7 +49,7 @@ body{
 
     var foto_upload= new Dropzone(".dropzone",{
         url: "<?php echo site_url('upload/import/') ?>",
-        maxFilesize: 2,
+        maxFilesize: 100,
         method:"post",
         paramName:"file",
         dictInvalidFileType:"Type file ini tidak dizinkan",

@@ -105,6 +105,8 @@ function loadBarChart(type, chartid){
                 type: 'bar',
                 data: data,
                 options: {
+                    responsive: true,
+                    aspectRatio: 1,
                     indexAxis: 'y',
                     plugins: {
                         title: {

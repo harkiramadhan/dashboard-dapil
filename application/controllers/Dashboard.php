@@ -532,6 +532,8 @@ class Dashboard extends CI_Controller{
             }
 
             $datasets[] = [
+                'categoryPercentage' => '0.3', // notice here 
+                'barPercentage' => '0.7',  // notice here
                 'label'=> $rt,
                 'data'=> $total,
                 'borderColor'=> $color,
