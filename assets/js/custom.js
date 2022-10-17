@@ -34,6 +34,7 @@ $("#myInput").on("keyup", function() {
 loadChart()
 
 function loadChart(){
+    $('.dapil-name').text($('.filter-dapil.opened').text())
     loadBarChart('DAK Fisik Reguler', 'DAK_Fisik_Reguler-chart')
     loadBarChart('DAK Fisik Penugasan', 'DAK_Fisik_Penugasan-chart')
     loadBarChart('DAK Fisik Afirmasi', 'DAK_Fisik_Afirmasi-chart')
@@ -90,6 +91,7 @@ function loadBarChart(type, chartid){
             $('#' + chartid).html(loader)
         },
         success: function(res){
+            $('#div-' + chartid).height(res.height)
             let chartStatus = Chart.getChart(chartid)
             if (chartStatus != undefined) {
                 chartStatus.destroy()
@@ -106,7 +108,8 @@ function loadBarChart(type, chartid){
                 data: data,
                 options: {
                     responsive: true,
-                    aspectRatio: 1,
+                    aspectRatio: res.aspectRatio,
+                    maintainAspectRatio: false,
                     indexAxis: 'y',
                     plugins: {
                         title: {
@@ -118,7 +121,6 @@ function loadBarChart(type, chartid){
                             }
                         },
                     },
-                    responsive: true,
                     scales: {
                         x: {
                             grid: {

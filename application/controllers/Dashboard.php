@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller{
     function index(){
         $provid = $this->input->get('prov', TRUE);
         $var['provinsi'] = $this->db->get_where('provinsi', ['id' => $provid])->row();
-        $var['dapil'] = $this->db->order_by('dapil', "ASC")->get_where('dapil', ['provinsi_id' => $provid]);
+        $var['dapil'] = $this->db->order_by('urut', "ASC")->get_where('dapil', ['provinsi_id' => $provid]);
         $var['bidang'] = $this->db->get('bidang');
 		$this->load->view('dashboard', $var);
     }
@@ -206,10 +206,21 @@ class Dashboard extends CI_Controller{
                 'barThickness' => 20
             ];
         }
+
+        if($getKabupaten->num_rows() >= 10){
+            $height = 800;
+        }elseif($getKabupaten->num_rows() >= 8){
+            $height = 400;
+        }else{
+            $height = 240;
+        }
+
         
         $result = [
             'labels' => $kabupaten,
-            'datasets' => $datasets
+            'datasets' => $datasets,
+            'aspectRatio' => ($getKabupaten->num_rows() > 8) ? 1 : 'false',
+            'height' => $height
         ];
 
         $this->output->set_content_type('application/json')->set_output(json_encode($result));
@@ -1009,10 +1020,12 @@ class Dashboard extends CI_Controller{
                     aaSorting: [],
                     lengthChange: false,
                     bPaginate: false,
+                    <?php if($getKabupaten->num_rows() > 2): ?>
                     scrollX: true,
                     fixedColumns:   {
                         left: 1
                     }
+                    <?php endif; ?>
                 })
             </script>
         <?php

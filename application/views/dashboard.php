@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  Last Published: Mon Oct 10 2022 13:38:14 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="633dbb106f6af822ec0da9ff" data-wf-site="633b251b96dff4c8a7043d93" style="zoom:75% !important">
+<html data-wf-page="633dbb106f6af822ec0da9ff" data-wf-site="633b251b96dff4c8a7043d93">
 <head>
   <meta charset="utf-8">
   <title>Dashboard</title>
@@ -121,8 +121,8 @@
                   <h3 class="heading-xs medium">DAK Fisik Reguler</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DAK_Fisik_Reguler-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DAK_Fisik_Reguler-chart">
+                  <canvas id="DAK_Fisik_Reguler-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-f8ad2aae-4107-6c8e-04f1-3519ba3396c1-ec0da9ff" class="bar-content">
@@ -131,8 +131,8 @@
                   <h3 class="heading-xs medium">DAK Fisik Penugasan</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DAK_Fisik_Penugasan-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DAK_Fisik_Penugasan-chart">
+                  <canvas id="DAK_Fisik_Penugasan-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-_30d3b11e-f6e7-561e-1903-1b053dc12f5d-ec0da9ff" class="bar-content">
@@ -141,8 +141,8 @@
                   <h3 class="heading-xs medium">DAK Fisik Afirmasi</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DAK_Fisik_Afirmasi-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DAK_Fisik_Afirmasi-chart">
+                  <canvas id="DAK_Fisik_Afirmasi-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-a671b37f-c7dc-ad68-c70f-9a627aedc524-ec0da9ff" class="bar-content">
@@ -151,8 +151,8 @@
                   <h3 class="heading-xs medium">DAK Non Fisik</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DAK_Non_Fisik-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DAK_Non_Fisik-chart">
+                  <canvas id="DAK_Non_Fisik-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-_85c7003f-a803-1f71-9bd8-3a609ec320ac-ec0da9ff" class="bar-content">
@@ -161,8 +161,8 @@
                   <h3 class="heading-xs medium">DAU</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DAU-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DAU-chart">
+                  <canvas id="DAU-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-c1c4d836-3222-3dd2-5987-d3173d6186e1-ec0da9ff" class="bar-content">
@@ -171,8 +171,8 @@
                   <h3 class="heading-xs medium">DID</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DID-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DID-chart">
+                  <canvas id="DID-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-_62128a06-0ea3-dcdb-1c01-98edf600c336-ec0da9ff" class="bar-content">
@@ -180,8 +180,8 @@
                   <h3 class="heading-xs medium">Dana Desa</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="Dana_Desa-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-Dana_Desa-chart">
+                  <canvas id="Dana_Desa-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-_11c1a606-658b-0b80-7579-aa988c389ec4-ec0da9ff" class="bar-content note">
@@ -218,8 +218,8 @@
                   <h3 class="heading-xs medium">DBH PBB</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_PBB-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DBH_PBB-chart">
+                  <canvas id="DBH_PBB-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-38169366187a-ec0da9ff" class="bar-content">
@@ -228,8 +228,8 @@
                   <h3 class="heading-xs medium">DBH PPh</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_PPh-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="id-DBH_PPh-chart">
+                  <canvas id="DBH_PPh-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-38169366187c-ec0da9ff" class="bar-content">
@@ -238,8 +238,8 @@
                   <h3 class="heading-xs medium">DBH SDA Panas Bumi</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_SDA_Panas_Bumi-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="id-DBH_SDA_Panas_Bumi-chart">
+                  <canvas id="DBH_SDA_Panas_Bumi-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-38169366187e-ec0da9ff" class="bar-content">
@@ -248,8 +248,8 @@
                   <h3 class="heading-xs medium">DBH SDA Perikanan</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_SDA_Perikanan-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DBH_SDA_Perikanan-chart">
+                  <canvas id="DBH_SDA_Perikanan-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661880-ec0da9ff" class="bar-content">
@@ -258,8 +258,8 @@
                   <h3 class="heading-xs medium">DBH SDA Kehutanan</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_SDA_Kehutanan-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DBH_SDA_Kehutanan-chart">
+                  <canvas id="DBH_SDA_Kehutanan-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661882-ec0da9ff" class="bar-content">
@@ -268,8 +268,8 @@
                   <h3 class="heading-xs medium">DBH SDA Migas</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_SDA_Migas-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DBH_SDA_Migas-chart">
+                  <canvas id="DBH_SDA_Migas-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661884-ec0da9ff" class="bar-content">
@@ -278,8 +278,8 @@
                   <h3 class="heading-xs medium">DBH SDA Minerba</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_SDA_Minerba-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DBH_SDA_Minerba-chart">
+                  <canvas id="DBH_SDA_Minerba-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
               <div id="w-node-ec2c38c2-0b6b-a007-1110-381693661886-ec0da9ff" class="bar-content">
@@ -288,8 +288,8 @@
                   <h3 class="heading-xs medium">DBH CHT</h3>
                   <div class="paragraph-small">(dalam Rp 000)</div>
                 </div>
-                <div class="w-embed w-script">
-                  <canvas id="DBH_CHT-chart" style="width: 100%;" max-height="400;"></canvas>
+                <div class="w-embed w-script" id="div-DBH_CHT-chart">
+                  <canvas id="DBH_CHT-chart" style="width: 100%;"></canvas>
                 </div>
               </div>
             </div>
@@ -497,7 +497,7 @@
             <div class="content-heading-wrapper">
               <h2 class="heading-s medium">Transfer Ke Daerah dan Dana Desa Daerah Pemilihan</h2>
               <div class="c-t-primary-100">
-                <h3 class="heading-xs">Jawa Timur III</h3>
+                <h3 class="heading-xs dapil-name"></h3>
               </div>
             </div>
             <div class="table-wrapper">
