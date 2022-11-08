@@ -574,7 +574,7 @@ class Dashboard extends CI_Controller{
         $bidang = $this->input->get('bidang', TRUE);
 
         ?>
-            <table id="table_dapil" class="display nowrap cell-border stripe">
+            <table id="table_dapil" class="display nowrap cell-border stripe" style="color: black!important margin-top: 10px">
                 <thead class="tableheader">
                     <tr class="tablerow-noline">
                         <th class="tablehead" rowspan="2" style="background-color: white"></th>
@@ -1024,9 +1024,23 @@ class Dashboard extends CI_Controller{
                     scrollX: true,
                     fixedColumns:   {
                         left: 1
-                    }
+                    },
                     <?php endif; ?>
+                    
                 })
+
+                const export_button = document.getElementById('downloadPdf2');
+                    export_button.addEventListener('click', () =>  {
+                    html_table_to_excel('xlsx');
+                });
+
+                function html_table_to_excel(type){
+                    var dapil = '<?= $dapil ?>'
+                    var data = document.getElementById('table_dapil');
+                    var file = XLSX.utils.table_to_book(data, {sheet: "sheet1"});
+                    XLSX.write(file, { bookType: type, bookSST: true, type: 'base64' });
+                    XLSX.writeFile(file, 'Transfer Ke Daerah dan Dana Desa Daerah Pemilihan - ' + dapil + ' .xlsx');
+                }
             </script>
         <?php
     }

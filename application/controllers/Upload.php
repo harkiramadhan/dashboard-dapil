@@ -23,6 +23,14 @@ class Upload extends CI_Controller{
         <?php
     }
 
+    function profil(){
+        $provid = $this->input->get('prov', TRUE);
+        $var['provinsi'] = $this->db->get_where('provinsi', ['id' => $provid])->row();
+        $var['dapil'] = $this->db->order_by('urut', "ASC")->get_where('dapil', ['provinsi_id' => $provid]);
+
+        $this->load->view('profil_upload', $var);
+    }
+
     function submit(){
         ini_set('memory_limit', '-1');
         $config['upload_path']      = './uploads/';
@@ -279,6 +287,12 @@ class Upload extends CI_Controller{
         }
 
         $this->output->set_content_type('application/json')->set_output(json_encode($res));
+        
+    }
+
+    function upload(){
+        $dapil = str_replace('                                    ', '', $this->input->get('dapil', TRUE));
+        $this->output->set_content_type('application/json')->set_output(json_encode($this->input->post()));
         
     }
 }
