@@ -21,6 +21,13 @@ class Welcome extends CI_Controller {
 
 	function index(){
 		$var['provinsi'] = $this->db->get('provinsi');
+		$dapils = [];
+		$getProv = $this->db->get('provinsi');
+		foreach($getProv->result() as $row){
+			$getDapil = $this->db->get_where('kabupaten', ['provinsi_id' => $row->id])->num_rows();
+			array_push($dapils, [strtolower($row->kode), $getDapil]);
+		}
+		$var['dapil'] = $dapils;
 		$this->load->view('landing', $var);
 	}
 
@@ -45,6 +52,11 @@ class Welcome extends CI_Controller {
 		}
 
 		$this->output->set_content_type('application/json')->set_output(json_encode($datas));
-		
+	}
+
+	function getProv(){
+		$name = $this->input->get('name', TRUE);
+		$get = $this->db->get_where('provinsi', ['kode_provinsi' => $name])->row();
+		$this->output->set_content_type('application/json')->set_output(json_encode($get->id));
 	}
 }
