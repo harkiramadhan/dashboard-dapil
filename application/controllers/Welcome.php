@@ -27,7 +27,19 @@ class Welcome extends CI_Controller {
 			$getDapil = $this->db->get_where('kabupaten', ['provinsi_id' => $row->id])->num_rows();
 			array_push($dapils, [strtolower($row->kode), $getDapil]);
 		}
+
+		$dapils2 = [];
+		foreach($getProv->result() as $row){
+			$getDapil2 = $this->db->select('*')
+								->from('kabupaten')
+								->where([
+									'provinsi_id' => $row->id
+								])->group_by('dapil')->get()->num_rows();
+			array_push($dapils2, [strtolower($row->kode), $getDapil2]);
+		}
+
 		$var['dapil'] = $dapils;
+		$var['dapil2'] = $dapils2;
 		$this->load->view('landing', $var);
 	}
 

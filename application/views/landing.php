@@ -15,6 +15,7 @@
   <link href="<?= base_url('assets/images/webclip.png') ?>" rel="apple-touch-icon">
   <!-- Tooltip Styling -->
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@4/themes/light-border.css">
+  <link rel="stylesheet" type="text/css" href="https://github.s3.amazonaws.com/downloads/lafeber/world-flags-sprite/flags32.css" />
 </head>
 <body>
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
@@ -62,60 +63,91 @@
                   text-align: center;
                   color: gray;
               }
+              .highcharts-tooltip > span {
+                  background: rgb(255 255 255 / 85%);
+                  border: 1px solid silver;
+                  border-radius: 3px;
+                  box-shadow: 1px 1px 2px #888;
+                  padding: 8px;
+              }
+
+              .loading {
+                  margin-top: 10em;
+                  text-align: center;
+                  color: gray;
+              }
+
+              .f32 .flag {
+                  vertical-align: middle !important;
+              }
               </style>
             <script>
               (async () => {
-                  const topology = await fetch(
-                      'https://code.highcharts.com/mapdata/countries/id/id-all.topo.json'
-                  ).then(response => response.json());
-                  // Prepare demo data. The data is joined to map using value of 'hc-key'
-                  // property by default. See API docs for 'joinBy' for more info on linking
-                  // data and map.
-                  const data = <?= json_encode($dapil) ?>
-                  // Create the chart
-                  Highcharts.mapChart('container', {
-                      chart: {map: topology},
-                      title: {text: ''},
-                      subtitle: {text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/id/id-all.topo.json">Indonesia</a>'},
-                      mapNavigation: {
-                          enabled: true,
-                          buttonOptions: {
-                              verticalAlign: 'bottom'
+                const topology = await fetch(
+                  'https://code.highcharts.com/mapdata/countries/id/id-all.topo.json'
+                ).then(response => response.json());
+
+                const data = <?= json_encode($dapil2) ?>;
+                Highcharts.mapChart('container', {
+                  chart: {map: topology},
+                  title: {text: ''},
+                  subtitle: {text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/id/id-all.topo.json">Indonesia</a>'},
+                  mapNavigation: {
+                      enabled: true,
+                      buttonOptions: {
+                          verticalAlign: 'bottom'
+                      }
+                  },
+                  colorAxis: {min: 0},
+                  series: [{
+                      data: <?= json_encode($dapil) ?>,
+                      name: 'Dapil',
+                      states: {
+                          hover: {
+                              color: '#5570F1'
                           }
                       },
-                      colorAxis: {min: 0},
-                      series: [{
-                          data: data,
-                          name: 'Dapil',
-                          states: {
-                              hover: {
-                                  color: '#5570F1'
-                              }
-                          },
-                          dataLabels: {
-                              enabled: true,
-                              format: '{point.name}'
-                          }
-                      }],
-                      plotOptions: {
-                        series: {
-                            point: {
-                                events: {
-                                    click: function () {
-                                        $.ajax({
-                                          url: '<?= site_url('welcome/getProv') ?>',
-                                          type: 'get',
-                                          data: {name: this.name},
-                                          success: function(res){
-                                            window.location.href = "<?= site_url('dashboard?prov=') ?>" + res
-                                          }
-                                        })
-                                    }
+                      dataLabels: {
+                          enabled: true,
+                          format: '{point.name}'
+                      }
+                  }],
+                  plotOptions: {
+                    series: {
+                        point: {
+                            events: {
+                                click: function () {
+                                    $.ajax({
+                                      url: '<?= site_url('welcome/getProv') ?>',
+                                      type: 'get',
+                                      data: {name: this.name},
+                                      success: function(res){
+                                        window.location.href = "<?= site_url('dashboard?prov=') ?>" + res
+                                      }
+                                    })
                                 }
                             }
                         }
-                      },
-                  });
+                    }
+                  },
+                  tooltip: {
+                    formatter(){
+                      let point = this,
+                          VAs;
+                          
+                      data.forEach(d => {
+                        if(d[0] == point.point['hc-key']){
+                          VAs = d[1]
+                        }
+                      })
+                      return `<b>Prov. ${point.key}</b> <br> <b>${point.point.value} Kabupaten</b> <br> <b>${VAs} Dapil</b>`
+                      // return `<span class="f32"><span class="flag"></span></span> 
+                      //         <span><b>Prov. ${point.key} </b> </span>
+                      //         <span><b>${point.point.value} Kabupaten </b> </span>
+                      //         <span><b>${VAs} Dapil </b> </span>`
+                    }
+                  },
+                });
               })();
             </script>
           </div>
