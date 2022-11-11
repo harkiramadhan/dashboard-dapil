@@ -361,8 +361,18 @@ $('#downloadPdf').click(function(event) {
     //     pdf.save('Test.pdf');
     // });
 
+    if(screen.width < 1024) {
+        document.getElementById("viewport").setAttribute("content", "width=1200px");
+    }
     const data = document.getElementById('reportPage');
-    html2canvas(data).then((canvas) => {
+    html2canvas(data, {
+        allowTaint: true,
+        removeContainer: true,
+        backgroundColor: null,
+        imageTimeout: 15000,
+        logging: true,
+        useCORS: true
+    }).then((canvas) => {
         const imgWidth = 208;
         const pageHeight = 295;
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
@@ -377,6 +387,6 @@ $('#downloadPdf').click(function(event) {
             doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
             heightLeft -= pageHeight;
         }
-        doc.save('Downld.pdf');
+        doc.save('Download.pdf');
     });
 });
