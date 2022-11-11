@@ -91,7 +91,7 @@
                 Highcharts.mapChart('container', {
                   chart: {map: topology},
                   title: {text: ''},
-                  subtitle: {text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/id/id-all.topo.json">Indonesia</a>'},
+                  subtitle: {text: ''},
                   mapNavigation: {
                       enabled: true,
                       buttonOptions: {

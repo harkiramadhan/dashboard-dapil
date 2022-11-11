@@ -577,7 +577,7 @@ class Dashboard extends CI_Controller{
             <table id="table_dapil" class="display nowrap cell-border stripe" style="color: black!important margin-top: 10px">
                 <thead class="tableheader">
                     <tr class="tablerow-noline">
-                        <th class="tablehead" rowspan="2" style="background-color: white"></th>
+                        <th class="tablehead" rowspan="2" style="background-color: white; padding: 15px!important"></th>
                         <?php foreach($rangeTahun as $rt){ 
                             if($rt == 2020){      
                                 $backgroundColor = '#5570F1';
@@ -587,7 +587,7 @@ class Dashboard extends CI_Controller{
                                 $backgroundColor = '#FFA640';
                             }    
                         ?>
-                            <th class="tablehead" style="background-color: <?= $backgroundColor ?>; color: white" colspan="<?= $getKabupaten->num_rows() ?>" align="center"><?= $rt ?></th>
+                            <th class="tablehead" style="background-color: <?= $backgroundColor ?>; color: white; padding: 15px!important" colspan="<?= $getKabupaten->num_rows() ?>" align="center"><?= $rt ?></th>
                         <?php } ?>
                     </tr>
                     <tr class="tablerow-noline">
@@ -602,13 +602,13 @@ class Dashboard extends CI_Controller{
                                 }  
                                 foreach($getKabupaten->result() as $kbr){ 
                         ?>
-                            <th align="center" style="background-color: <?= $backgroundColor ?>; color: white"><?= $kbr->kabupaten ?></th>
+                            <th align="center" style="background-color: <?= $backgroundColor ?>; color: white; padding: 15px!important"><?= $kbr->kabupaten ?></th>
                         <?php }} ?>
                     </tr>
                 </thead>
                 <tbody class="tablebody">
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH PPh</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH PPh</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -631,11 +631,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH PBB</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH PBB</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -658,11 +658,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH CHT</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH CHT</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -685,11 +685,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Migas</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH SDA Migas</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -712,11 +712,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Minerba</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH SDA Minerba</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -739,11 +739,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Kehutanan</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH SDA Kehutanan</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -766,11 +766,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Perikanan</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH SDA Perikanan</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -793,11 +793,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DBH SDA Panas Bumi</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DBH SDA Panas Bumi</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -820,11 +820,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DAU</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DAU</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -847,11 +847,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Fisik Reguler</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DAK Fisik Reguler</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -874,11 +874,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Fisik Penugasan</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DAK Fisik Penugasan</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -901,11 +901,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Fisik Afirmasi</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DAK Fisik Afirmasi</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -928,11 +928,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DAK Non Fisik</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DAK Non Fisik</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -955,11 +955,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">DID</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">DID</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -982,11 +982,11 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 <tr class="tablerow-noline">
-                    <th id="dataname" class="tabledataleft" style="background-color: white">Dana Desa</th>
+                    <th id="dataname" class="tabledataleft" style="background-color: white; padding: 15px!important">Dana Desa</th>
                     <?php 
                         foreach($rangeTahun as $rts){ 
                             if($rts == 2020){      
@@ -1009,7 +1009,7 @@ class Dashboard extends CI_Controller{
                                         'd.kabupaten_id' => $kbr->id
                                     ])->get()->row();
                     ?>
-                        <th align="left" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
+                        <th align="right" style="background-color: <?= $backgroundColor ?>;"><?= rupiah($cekData->total) ?></th>
                     <?php }} ?>
                 </tr>
                 </tbody>

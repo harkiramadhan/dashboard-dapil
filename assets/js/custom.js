@@ -315,51 +315,68 @@ $('#downloadPdf').click(function(event) {
     //     pdf.save("invoice.pdf");
     // });
 
-    var quotes = document.getElementById('reportPage');
-    html2canvas(quotes).then((canvas) => {
-        //! MAKE YOUR PDF
-        var pdf = new jsPDF('l', 'pt', 'A3');
+    // var quotes = document.getElementById('reportPage');
+    // html2canvas(quotes).then((canvas) => {
+    //     //! MAKE YOUR PDF
+    //     var pdf = new jsPDF('l', 'pt', 'A3');
 
-        for (var i = 0; i <= quotes.clientHeight/900; i++) {
-            //! This is all just html2canvas stuff
-            var srcImg  = canvas;
-            var sX      = 0;
-            var sY      = 900*i; // start 980 pixels down for every new page
-            var sWidth  = 1200;
-            var sHeight = 900;
-            var dX      = 0;
-            var dY      = 0;
-            var dWidth  = 1200;
-            var dHeight = 900;
+    //     for (var i = 0; i <= quotes.clientHeight/900; i++) {
+    //         //! This is all just html2canvas stuff
+    //         var srcImg  = canvas;
+    //         var sX      = 0;
+    //         var sY      = 900*i; // start 980 pixels down for every new page
+    //         var sWidth  = 1200;
+    //         var sHeight = 900;
+    //         var dX      = 0;
+    //         var dY      = 0;
+    //         var dWidth  = 1200;
+    //         var dHeight = 900;
 
-            window.onePageCanvas = document.createElement("canvas");
-            onePageCanvas.setAttribute('width', 1200);
-            onePageCanvas.setAttribute('height', 900);
-            var ctx = onePageCanvas.getContext('2d');
-            // details on this usage of this function: 
-            // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images#Slicing
-            ctx.drawImage(srcImg,sX,sY,sWidth,sHeight,dX,dY,dWidth,dHeight);
+    //         window.onePageCanvas = document.createElement("canvas");
+    //         onePageCanvas.setAttribute('width', 1200);
+    //         onePageCanvas.setAttribute('height', 900);
+    //         var ctx = onePageCanvas.getContext('2d');
+    //         // details on this usage of this function: 
+    //         // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images#Slicing
+    //         ctx.drawImage(srcImg,sX,sY,sWidth,sHeight,dX,dY,dWidth,dHeight);
 
-            // document.body.appendChild(canvas);
-            var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
+    //         // document.body.appendChild(canvas);
+    //         var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
 
-            var width         = onePageCanvas.width;
-            var height        = onePageCanvas.clientHeight;
+    //         var width         = onePageCanvas.width;
+    //         var height        = onePageCanvas.clientHeight;
 
-            //! If we're on anything other than the first page,
-            // add another page
-            if (i > 0) {
-                pdf.addPage('A3'); //8.5" x 11" in pts (in*72)
-            }
-            //! now we declare that we're working on that page
-            pdf.setPage(i+1);
-            //! now we add content to that page!
-            pdf.addImage(canvasDataURL, 'PNG', 20, 40, (width*.62), (height*.62));
+    //         //! If we're on anything other than the first page,
+    //         // add another page
+    //         if (i > 0) {
+    //             pdf.addPage('A3'); //8.5" x 11" in pts (in*72)
+    //         }
+    //         //! now we declare that we're working on that page
+    //         pdf.setPage(i+1);
+    //         //! now we add content to that page!
+    //         pdf.addImage(canvasDataURL, 'PNG', 20, 40, (width*.62), (height*.62));
 
+    //     }
+    //     //! after the for loop is finished running, we save the pdf.
+    //     pdf.save('Test.pdf');
+    // });
+
+    const data = document.getElementById('reportPage');
+    html2canvas(data).then((canvas) => {
+        const imgWidth = 208;
+        const pageHeight = 295;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
+        heightLeft -= pageHeight;
+        const doc = new jsPDF('p', 'mm');
+        doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+        while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            doc.addPage();
+            doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+            heightLeft -= pageHeight;
         }
-        //! after the for loop is finished running, we save the pdf.
-        pdf.save('Test.pdf');
+        doc.save('Downld.pdf');
     });
-
-
 });
