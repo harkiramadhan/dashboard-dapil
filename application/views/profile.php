@@ -23,7 +23,7 @@
     <div class="page-wrapper">
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="side-navigation w-nav">
             <div class="navside-container">
-                <a href="#" class="nav-brand w-nav-brand"><img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="../images/logo-setjen-reduced-p-500.png 500w, ../images/logo-setjen-reduced.png 942w" sizes="64px" alt=""></a>
+            <a href="#" class="nav-brand w-nav-brand"><img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, images/logo-setjen-reduced.png 942w" sizes="64px" alt=""></a>
                 <nav role="navigation" class="sidenav-menu w-nav-menu">
                 <div class="sidenav-menu-flex">
                     <a href="<?= site_url('') ?>" class="sidenav-link hide-tablet w-inline-block">
@@ -32,14 +32,24 @@
                     </div>
                     </a>
                     <a href="<?= site_url('dashboard?prov=' . $this->input->get('prov', TRUE)) ?>" aria-current="page" class="sidenav-link w-inline-block ">
-                    <div class="icon-text"><img src="<?= base_url('assets/images/Category-customized.svg') ?>" loading="lazy" alt="">
-                        <div>Dashboard</div>
-                    </div>
+                        <div class="icon-text">
+                            <div class="icon-24 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4" d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z" fill="CurrentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.53852 2H7.92449C9.32676 2 10.463 3.14585 10.463 4.55996V7.97452C10.463 9.38864 9.32676 10.5345 7.92449 10.5345H4.53852C3.13626 10.5345 2 9.38864 2 7.97452V4.55996C2 3.14585 3.13626 2 4.53852 2ZM4.53852 13.4655H7.92449C9.32676 13.4655 10.463 14.6114 10.463 16.0255V19.44C10.463 20.8532 9.32676 22 7.92449 22H4.53852C3.13626 22 2 20.8532 2 19.44V16.0255C2 14.6114 3.13626 13.4655 4.53852 13.4655ZM19.4615 13.4655H16.0755C14.6732 13.4655 13.537 14.6114 13.537 16.0255V19.44C13.537 20.8532 14.6732 22 16.0755 22H19.4615C20.8637 22 22 20.8532 22 19.44V16.0255C22 14.6114 20.8637 13.4655 19.4615 13.4655Z" fill="CurrentColor"></path>
+                            </svg></div>
+                            <div>Dashboard</div>
+                        </div>
                     </a>
-                    <a href="<?= site_url('profil?prov=' . $this->input->get('prov', TRUE)) ?>" class="sidenav-link w-inline-block w--current">
-                    <div class="icon-text"><img src="<?= base_url('assets/images/2-User.svg') ?>" loading="lazy" alt="">
-                        <div>Profil Anggota</div>
-                    </div>
+                    <a href="<?= site_url('profil?prov=' . $this->input->get('prov', TRUE)) ?>" aria-current="page" class="sidenav-link w-inline-block w--current">
+                        <div class="icon-text">
+                            <div class="icon-24 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.59151 15.2068C13.2805 15.2068 16.4335 15.7658 16.4335 17.9988C16.4335 20.2318 13.3015 20.8068 9.59151 20.8068C5.90151 20.8068 2.74951 20.2528 2.74951 18.0188C2.74951 15.7848 5.88051 15.2068 9.59151 15.2068Z" stroke="CurrentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.59157 12.0198C7.16957 12.0198 5.20557 10.0568 5.20557 7.63482C5.20557 5.21282 7.16957 3.24982 9.59157 3.24982C12.0126 3.24982 13.9766 5.21282 13.9766 7.63482C13.9856 10.0478 12.0356 12.0108 9.62257 12.0198H9.59157Z" stroke="CurrentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M16.4829 10.8816C18.0839 10.6566 19.3169 9.28265 19.3199 7.61965C19.3199 5.98065 18.1249 4.62065 16.5579 4.36365" stroke="CurrentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M18.5952 14.7322C20.1462 14.9632 21.2292 15.5072 21.2292 16.6272C21.2292 17.3982 20.7192 17.8982 19.8952 18.2112" stroke="CurrentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                            <div>Profil Anggota</div>
+                        </div>
                     </a>
                 </div>
                 </nav>
@@ -67,11 +77,11 @@
                         <div class="section-heading-centered">
                             <h1 class="heading-m regular">Daerah Pemilihan <?= str_replace('Prov. ', '', $provinsi->provinsi) ?></h1>
                             <div class="pill-wrapper">
-                                <?php $no= 1; foreach($dapil->result() as $row): ?>
+                            <?php $no= 1; foreach($dapil->result() as $row): ?>
                                 <a href="#" class="pill w-inline-block filter-dapil <?= ($no==1) ? 'opened' : '' ?>" data-id="<?= $row->id ?>">
                                     <div><?= $row->dapil ?></div>
                                 </a>
-                                <?php $no++; endforeach; ?>
+                            <?php $no++; endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -81,72 +91,10 @@
                 <div class="container">
                     <div class="content-wrapper">
                         <div class="content-heading-wrapper">
-                        <h2 class="heading-s medium">Profil Anggota Jawa Timur II</h2>
+                            <h2 class="heading-s medium text-foto"></h2>
                         </div>
-                        <div class="w-layout-grid grid-4-content margin-24">
-                            <div id="w-node-d81d9352-9940-5d49-8014-4ba3bde4962a-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/AMINUROKHMAN-S.E.-M.M._A-376_F-Nasdem.webp" loading="lazy" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">AMINUROKHMAN, S.E., M.M.</h3>
-                                </div>
-                                <div class="paragraph-small">F-Nasdem</div>
-                                </div>
-                            </div>
-                            <div id="w-node-e40058f3-0fc0-9019-0bc8-eab5b00624bf-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/dr.-H.-MUFTI-AIMAH-NURUL-ANAM_A-208_F-PDIP.webp" loading="lazy" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">dr. H. MUFTI AIMAH NURUL ANAM</h3>
-                                </div>
-                                <div class="paragraph-small">F-PDIP</div>
-                                </div>
-                            </div>
-                            <div id="w-node-b30b70f8-b47e-5e7c-487f-dd748f4bc0ce-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/AMINUROKHMAN-S.E.-M.M._A-376_F-Nasdem.webp" loading="lazy" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">Dra. Hj. ANISAH SYAKUR</h3>
-                                </div>
-                                <div class="paragraph-small">F-PKB</div>
-                                </div>
-                            </div>
-                            <div id="w-node-f409c706-6d9a-95b0-8141-52fb9602afd2-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/FAISOL-RIZA_A-33_F-PKB.webp" loading="lazy" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">FAISOL RIZA</h3>
-                                </div>
-                                <div class="paragraph-small">F-PKB</div>
-                                </div>
-                            </div>
-                            <div id="w-node-bf7a73ef-f689-e021-58b4-72a304105a67-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar.webp" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 91vw, (max-width: 1919px) 80vw, 96vw" srcset="../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-500.jpg 500w, ../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-800.jpg 800w, ../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-1080.jpg 1080w, ../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-1600.jpg 1600w, ../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-2000.jpg 2000w, ../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-2600.jpg 2600w, ../images/H.-MUKHAMAD-MISBAKHUN-S.E.-M.H._A-314_F-Golkar-p-3200.jpg 3200w" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">H. MUKHAMAD MISBAKHUN, S.E.,</h3>
-                                </div>
-                                <div class="paragraph-small">F-Golkar</div>
-                                </div>
-                            </div>
-                            <div id="w-node-_9a44756b-5425-a961-b2d1-7ce1fb131dbd-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/MOH.-HAERUL-AMRI-SP._A-375_F-Nasdem.webp" loading="lazy" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">MOH. HAERUL AMRI, SP.</h3>
-                                </div>
-                                <div class="paragraph-small">F-Nasdem</div>
-                                </div>
-                            </div>
-                            <div id="w-node-_3504d432-a356-5f76-9f42-ea8847031fd9-95221726" class="profile-wrapper">
-                                <div class="profile-image-wrapper"><img src="../images/LAKSDYA.-TNI-PURN-MOEKHLAS-SIDIK-MPA._A-107_-F-Gerindra.webp" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 91vw, (max-width: 1919px) 80vw, 96vw" srcset="../images/LAKSDYA.-TNI-PURN-MOEKHLAS-SIDIK-MPA._A-107_-F-Gerindra-p-500.jpeg 500w" alt="" class="profile-image"></div>
-                                <div class="profile-content">
-                                <div class="margin-8">
-                                    <h3 class="heading-xs">LAKSDYA. TNI (PURN) MOEKHLAS SIDIK, MPA.</h3>
-                                </div>
-                                <div class="paragraph-small">F-Nasdem</div>
-                                </div>
-                            </div>
+                        <div class="foto">
+
                         </div>
                     </div>
                 </div>
@@ -161,7 +109,11 @@
             </div>
         </div>
     </div>
-    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=633b251b96dff4c8a7043d93" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        var baseUrl = '<?= site_url() ?>';
+        var assetsUrl = '<?= base_url('assets/') ?>';
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="<?= base_url('assets/js/clients-dashboard-pka.js') ?>" type="text/javascript"></script>
     <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
     <!-- Tooltip Scripts & Settings -->
