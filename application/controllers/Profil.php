@@ -10,20 +10,28 @@ class Profil extends CI_Controller{
 
     function foto(){
         $dapil = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
-
+        $anggota = $this->db->select('a.*, p.singkat fraksi')
+                            ->from('anggota a')
+                            ->join('parpol p', 'a.parpol_id = p.id')
+                            ->where([
+                                'LOWER(`dapil`)' => strtolower($dapil)
+                            ])->get();
         ?>
             <div class="w-layout-grid grid-4-content margin-24">
+                <?php foreach($anggota->result() as $row): ?>
                 <div id="w-node-d81d9352-9940-5d49-8014-4ba3bde4962a-95221726" class="profile-wrapper">
-                    <div class="profile-image-wrapper"><img src="../images/AMINUROKHMAN-S.E.-M.M._A-376_F-Nasdem.webp" loading="lazy" alt="" class="profile-image"></div>
-                    <div class="profile-content">
-                    <div class="margin-8">
-                        <h3 class="heading-xs">AMINUROKHMAN, S.E., M.M.</h3>
+                    <div class="profile-image-wrapper">
+                        <img src="<?= base_url('uploads/profil/' . $row->img) ?>" loading="lazy" alt="" class="profile-image">
                     </div>
-                    <div class="paragraph-small">F-Nasdem</div>
+                    <div class="profile-content">
+                        <div class="margin-8">
+                            <h3 class="heading-xs"><?= $row->nama ?></h3>
+                        </div>
+                        <div class="paragraph-small">F-<?= $row->fraksi ?></div>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
         <?php
-        $this->output->set_content_type('application/json')->set_output(json_encode($dapil));
     }
 }
