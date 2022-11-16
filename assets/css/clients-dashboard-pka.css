@@ -766,10 +766,12 @@ ol {
 }
 
 .pill.opened {
-  border-width: 2px;
+  border-width: 1px;
   border-color: #5570f1;
-  background-color: #fff;
+  background-color: #5570f1;
   box-shadow: 0 0 16px 0 rgba(85, 112, 241, 0.16);
+  color: #fff;
+  font-weight: 500;
 }
 
 .flex-horizontal-16 {
@@ -1580,6 +1582,11 @@ ol {
   background-repeat: repeat, repeat;
 }
 
+.dapil-detail {
+  max-width: 540px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 @media screen and (max-width: 991px) {
   .heading-xl.regular {

@@ -74,6 +74,9 @@
                   </a>
                 <?php $no++; endforeach; ?>
               </div>
+              <div class="margin-16">
+                <div class="text-desc dapil-detail"></div>
+              </div>
             </div>
           </div>
           <div class="content-wrapper">

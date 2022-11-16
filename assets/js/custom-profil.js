@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+    getDescText()
     loadPhotos()
 })
 
@@ -7,6 +9,7 @@ $('.filter-dapil').click(function(){
     $('.filter-dapil.opened').removeClass('opened')
     $(this).addClass('opened')
 
+    getDescText()
     loadPhotos()
 })
 
@@ -19,6 +22,17 @@ function loadPhotos(){
         data: {dapil : dapil},
         success: function(res){
             $('.foto').html(res)
+        }
+    })
+}
+
+function getDescText(){
+    $.ajax({
+        url: baseUrl + 'dashboard/ajaxGetKabupaten',
+        type: 'get',
+        data: {dapil : $('.filter-dapil.opened').text()},
+        success: function(res){
+            $('.text-desc').text(res)
         }
     })
 }

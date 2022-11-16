@@ -13,6 +13,19 @@ class Dashboard extends CI_Controller{
 		$this->load->view('dashboard', $var);
     }
 
+    function ajaxGetKabupaten(){
+        $dapil = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
+        $getKabupaten = $this->db->select('id, kabupaten')->order_by('kabupaten', "ASC")->get_where('kabupaten', ['dapil' => $dapil]);
+        $copy = $getKabupaten->result();
+        echo "Meliputi Kabupaten ";
+        foreach($getKabupaten->result() as $row){
+            echo $row->kabupaten;
+            if(next($copy)){
+                echo ", ";
+            }
+        }
+    }
+
     function ajaxBarChart(){
         $type = $this->input->get('type', TRUE);
         $bidang = $this->input->get('bidang', TRUE);
@@ -29,12 +42,16 @@ class Dashboard extends CI_Controller{
 
         $datasets = [];
         foreach($rangeTahun as $rt){
-            if($rt == 2020){      
-                $color = '#4339F2';
-            }elseif($rt == 2021){
-                $color = '#34B53A';
+            if(count($rangeTahun) > 1){
+                if($rt == 2020){      
+                    $color = '#4339F2';
+                }elseif($rt == 2021){
+                    $color = '#34B53A';
+                }else{
+                    $color = '#FFB200';
+                }
             }else{
-                $color = '#FFB200';
+                $color = '#4339F2';
             }
 
             $getData = [];

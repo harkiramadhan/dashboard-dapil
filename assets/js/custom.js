@@ -35,6 +35,8 @@ loadChart()
 
 function loadChart(){
     $('.dapil-name').text($('.filter-dapil.opened').text())
+
+    getDescText()
     loadBarChart('DAK Fisik Reguler', 'DAK_Fisik_Reguler-chart')
     loadBarChart('DAK Fisik Penugasan', 'DAK_Fisik_Penugasan-chart')
     loadBarChart('DAK Fisik Afirmasi', 'DAK_Fisik_Afirmasi-chart')
@@ -74,6 +76,17 @@ function loadChart(){
     loadLineChart('APM SMP', 'APM_SMP-chart')
     loadLineChart('APM SM', 'APM_SM-chart')
     loadTable()
+}
+
+function getDescText(){
+    $.ajax({
+        url: baseUrl + 'dashboard/ajaxGetKabupaten',
+        type: 'get',
+        data: {dapil : $('.filter-dapil.opened').text()},
+        success: function(res){
+            $('.text-desc').text(res)
+        }
+    })
 }
 
 function loadBarChart(type, chartid){

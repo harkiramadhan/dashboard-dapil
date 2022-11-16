@@ -77,11 +77,14 @@
                         <div class="section-heading-centered">
                             <h1 class="heading-m regular">Daerah Pemilihan <?= str_replace('Prov. ', '', $provinsi->provinsi) ?></h1>
                             <div class="pill-wrapper">
-                            <?php $no= 1; foreach($dapil->result() as $row): ?>
-                                <a href="#" class="pill w-inline-block filter-dapil <?= ($no==1) ? 'opened' : '' ?>" data-id="<?= $row->id ?>">
-                                    <div><?= $row->dapil ?></div>
-                                </a>
-                            <?php $no++; endforeach; ?>
+                                <?php $no= 1; foreach($dapil->result() as $row): ?>
+                                    <a href="#" class="pill w-inline-block filter-dapil <?= ($no==1) ? 'opened' : '' ?>" data-id="<?= $row->id ?>">
+                                        <div><?= $row->dapil ?></div>
+                                    </a>
+                                <?php $no++; endforeach; ?>
+                            </div>
+                            <div class="margin-16">
+                                <div class="text-desc dapil-detail"></div>
                             </div>
                         </div>
                     </div>

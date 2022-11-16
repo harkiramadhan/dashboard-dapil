@@ -25,7 +25,7 @@ class Profil extends CI_Controller{
                     </div>
                     <div class="profile-content">
                         <div class="margin-8">
-                            <h3 class="heading-xs"><?= $row->nama ?></h3>
+                            <h3 class="heading-xs"><?= $row->id." ".$row->nama ?></h3>
                         </div>
                         <div class="paragraph-small">F-<?= $row->fraksi ?></div>
                     </div>
