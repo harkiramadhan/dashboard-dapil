@@ -9,29 +9,55 @@ class Profil extends CI_Controller{
     }
 
     function foto(){
-        $dapil = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
-        $anggota = $this->db->select('a.*, p.singkat fraksi')
-                            ->from('anggota a')
-                            ->join('parpol p', 'a.parpol_id = p.id')
-                            ->where([
-                                'LOWER(`dapil`)' => strtolower($dapil)
-                            ])->get();
-        ?>
-            <div class="w-layout-grid grid-4-content margin-24">
-                <?php foreach($anggota->result() as $row): ?>
-                <div id="w-node-d81d9352-9940-5d49-8014-4ba3bde4962a-95221726" class="profile-wrapper">
-                    <div class="profile-image-wrapper">
-                        <img src="<?= base_url('uploads/profil/' . $row->img) ?>" loading="lazy" alt="" class="profile-image">
-                    </div>
-                    <div class="profile-content">
-                        <div class="margin-8">
-                            <h3 class="heading-xs"><?= $row->id." ".$row->nama ?></h3>
+        $dpl = trim(preg_replace('/\s\s+/', ' ', $this->input->get('dapil', TRUE)));
+        $dapil = $this->db->get_where('dapil', ['dapil' => $dpl])->row()->long;
+		ini_set('user_agent', 'Dashboard-PKA');
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+			CURLOPT_URL => 'https://www.dpr.go.id/json/?method=getSemuaAnggota',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'GET',
+			CURLOPT_USERAGENT => 'Dashboard-PKA'
+		));
+
+		$response = curl_exec($curl);
+
+		curl_close($curl);
+		$data = json_decode($response, true);
+		
+        /* 
+            no_anggota
+            id
+            nama
+            fraksi
+            dapil
+            alamat
+            foto  => https://www.dpr.go.id/doksigota/photo/1320.jpg
+        */
+        ?><div class="w-layout-grid grid-4-content margin-24"><?php
+            foreach($data as $row){
+                if($row['dapil'] == $dapil){
+                    ?>
+                        <div id="w-node-d81d9352-9940-5d49-8014-4ba3bde4962a-95221726" class="profile-wrapper">
+                            <div class="profile-image-wrapper">
+                                <img src="https://www.dpr.go.id/<?= $row['foto'] ?>" loading="lazy" alt="" class="profile-image">
+                            </div>
+                            <div class="profile-content">
+                                <div class="margin-8">
+                                    <h3 class="heading-xs"><?= "A.".$row["no_anggota"]." - ".$row['nama'] ?></h3>
+                                </div>
+                                <div class="paragraph-small">F-<?= $row['fraksi'] ?></div>
+                            </div>
                         </div>
-                        <div class="paragraph-small">F-<?= $row->fraksi ?></div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        <?php
+                    <?php
+                }
+            }
+        ?></div><?php
     }
 }
