@@ -43,29 +43,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('landing', $var);
 	}
 
-	public function indexx()
-	{
-		$getProvinsi = $this->db->get('provinsi');
-		foreach($getProvinsi->result() as $prov){
-			$dataKab = [];
-			$getKabupaten = $this->db->get_where('kabupaten', ['provinsi_id' => $prov->id]);
-			foreach($getKabupaten->result() as $kab){
-				$dataKab[] = [
-					'dapil' => $prov->kode_provinsi." ".$kab->kode_kabupaten,
-					'kabupaten' => $kab->kabupaten,
-					'singkat' => $kab->singkat_kabupaten
-				];
-			}
-			$datas[] = [
-				'provinsi' => $prov->provinsi,
-				'singkat' => $prov->singkat_provinsi,
-				'kabupaten' => $dataKab
-			];
-		}
-
-		$this->output->set_content_type('application/json')->set_output(json_encode($datas));
-	}
-
 	function getProv(){
 		$name = $this->input->get('name', TRUE);
 		$get = $this->db->get_where('provinsi', ['kode_provinsi' => $name])->row();
