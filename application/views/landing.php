@@ -49,6 +49,7 @@
           <div class="w-embed w-script">
             <script src="https://code.highcharts.com/maps/highmaps.js"></script>
             <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
             <div id="container"></div>
             <style>
               #container {
@@ -80,6 +81,10 @@
               .f32 .flag {
                   vertical-align: middle !important;
               }
+
+              .highcharts-color-0 {
+                fill:#5570f1;
+              }
               </style>
             <script>
               (async () => {
@@ -92,6 +97,7 @@
                   chart: {map: topology},
                   title: {text: ''},
                   subtitle: {text: ''},
+                  legend: {enabled: false},
                   mapNavigation: {
                       enabled: true,
                       buttonOptions: {
@@ -141,10 +147,6 @@
                         }
                       })
                       return `<b>Prov. ${point.key}</b> <br> <b>${point.point.value} Kabupaten</b> <br> <b>${VAs} Dapil</b>`
-                      // return `<span class="f32"><span class="flag"></span></span> 
-                      //         <span><b>Prov. ${point.key} </b> </span>
-                      //         <span><b>${point.point.value} Kabupaten </b> </span>
-                      //         <span><b>${VAs} Dapil </b> </span>`
                     }
                   },
                 });
