@@ -65,7 +65,7 @@
                 </div>
                 <div class="container">
                     <div class="breadcrumbs-wrapper">
-                        <a href="../index.html" class="breadcrumbs-home w-inline-block"><img src="<?= base_url('assets/images/Home-filled-primary.svg') ?>" loading="lazy" alt=""></a>
+                        <a href="<?= site_url('') ?>" class="breadcrumbs-home w-inline-block"><img src="<?= base_url('assets/images/Home-filled-primary.svg') ?>" loading="lazy" alt=""></a>
                         <div>/</div>
                         <a href="#" class="breadcrumb-link"><?= str_replace('Prov. ', '', $provinsi->provinsi) ?></a>
                     </div>
