@@ -71,7 +71,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DAK Fisik Penugasan'){
                     $getData = $this->db->select('SUM(DAK_Fisik_Penugasan) as total')
@@ -81,7 +81,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DAK Fisik Afirmasi'){
                     $getData = $this->db->select('SUM(DAK_Fisik_Afirmasi) as total')
@@ -91,7 +91,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DAK Non Fisik'){
                     $getData = $this->db->select('SUM(DAK_Non_Fisik) as total')
@@ -101,7 +101,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DAU'){
                     $getData = $this->db->select('SUM(DAU) as total')
@@ -111,7 +111,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DID'){
                     $getData = $this->db->select('SUM(DID) as total')
@@ -121,7 +121,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'Dana Desa'){
                     $getData = $this->db->select('SUM(Dana_Desa) as total')
@@ -131,7 +131,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH PBB'){
                     $getData = $this->db->select('SUM(DBH_PBB) as total')
@@ -141,7 +141,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH PPh'){
                     $getData = $this->db->select('SUM(DBH_PPh) as total')
@@ -151,7 +151,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH SDA Panas Bumi'){
                     $getData = $this->db->select('SUM(DBH_SDA_Panas_Bumi) as total')
@@ -161,7 +161,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH SDA Perikanan'){
                     $getData = $this->db->select('SUM(DBH_SDA_Perikanan) as total')
@@ -171,7 +171,7 @@ class Dashboard extends CI_Controller{
                                             'd.tahun' => $rt,
                                             'd.kabupaten_id' => $k->id
                                         ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH SDA Kehutanan'){
                     $getData = $this->db->select('SUM(DBH_SDA_Kehutanan) as total')
@@ -181,7 +181,7 @@ class Dashboard extends CI_Controller{
                         'd.tahun' => $rt,
                         'd.kabupaten_id' => $k->id
                     ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH SDA Migas'){
                     $getData = $this->db->select('SUM(DBH_SDA_Migas) as total')
@@ -191,7 +191,7 @@ class Dashboard extends CI_Controller{
                         'd.tahun' => $rt,
                         'd.kabupaten_id' => $k->id
                     ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH SDA Minerba'){
                     $getData = $this->db->select('SUM(DBH_SDA_Minerba) as total')
@@ -201,7 +201,7 @@ class Dashboard extends CI_Controller{
                         'd.tahun' => $rt,
                         'd.kabupaten_id' => $k->id
                     ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }elseif($type == 'DBH CHT'){
                     $getData = $this->db->select('SUM(DBH_CHT) as total')
@@ -211,7 +211,7 @@ class Dashboard extends CI_Controller{
                         'd.tahun' => $rt,
                         'd.kabupaten_id' => $k->id
                     ])->get()->row();
-                    array_push($total, $getData->total);
+                    array_push($total, $getData->total/1000);
                     array_push($kabupaten, $k->kabupaten);
                 }
             }
