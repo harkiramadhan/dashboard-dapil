@@ -145,7 +145,7 @@
                   <div class="graph-title">
                     <div data-tippy-content="Dana Alokasi Khusus Fisik Reguler" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Fisik Reguler</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Fisik_Reguler-chart">
                     <canvas id="DAK_Fisik_Reguler-chart" style="width: 100%;"></canvas>
@@ -155,7 +155,7 @@
                   <div class="graph-title">
                     <div data-tippy-content="Dana Alokasi Khusus Fisik Penugasan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Fisik Penugasan</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Fisik_Penugasan-chart">
                     <canvas id="DAK_Fisik_Penugasan-chart" style="width: 100%;"></canvas>
@@ -165,7 +165,7 @@
                   <div class="graph-title">
                     <div data-tippy-content="Dana Alokasi Khusus Fisik Afirmasi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Fisik Afirmasi</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Fisik_Afirmasi-chart">
                     <canvas id="DAK_Fisik_Afirmasi-chart" style="width: 100%;"></canvas>
@@ -175,7 +175,7 @@
                   <div class="graph-title">
                     <div data-tippy-content="Dana Alokasi Khusus Non Fisik" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Non Fisik</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Non_Fisik-chart">
                     <canvas id="DAK_Non_Fisik-chart" style="width: 100%;"></canvas>
@@ -185,7 +185,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Alokasi Umum" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAU</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DAU-chart">
                     <canvas id="DAU-chart" style="width: 100%;"></canvas>
@@ -195,7 +195,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Insentif Daerah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DID</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DID-chart">
                     <canvas id="DID-chart" style="width: 100%;"></canvas>
@@ -204,7 +204,7 @@
                 <div id="w-node-_62128a06-0ea3-dcdb-1c01-98edf600c336-ec0da9ff" class="bar-content">
                   <div class="graph-title">
                     <h3 class="heading-xs medium">Dana Desa</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-Dana_Desa-chart">
                     <canvas id="Dana_Desa-chart" style="width: 100%;"></canvas>
@@ -242,7 +242,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Pajak Bumi dan Bangunan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH PBB</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_PBB-chart">
                     <canvas id="DBH_PBB-chart" style="width: 100%;"></canvas>
@@ -252,7 +252,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Pajak Penghasilan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH PPh</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="id-DBH_PPh-chart">
                     <canvas id="DBH_PPh-chart" style="width: 100%;"></canvas>
@@ -262,7 +262,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Panas Bumi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Panas Bumi</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="id-DBH_SDA_Panas_Bumi-chart">
                     <canvas id="DBH_SDA_Panas_Bumi-chart" style="width: 100%;"></canvas>
@@ -272,7 +272,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Perikanan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Perikanan</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Perikanan-chart">
                     <canvas id="DBH_SDA_Perikanan-chart" style="width: 100%;"></canvas>
@@ -282,7 +282,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Kehutanan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Kehutanan</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Kehutanan-chart">
                     <canvas id="DBH_SDA_Kehutanan-chart" style="width: 100%;"></canvas>
@@ -292,7 +292,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Minyak dan Gas Bumi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Migas</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Migas-chart">
                     <canvas id="DBH_SDA_Migas-chart" style="width: 100%;"></canvas>
@@ -302,7 +302,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Mineral dan Batubara" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Minerba</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Minerba-chart">
                     <canvas id="DBH_SDA_Minerba-chart" style="width: 100%;"></canvas>
@@ -312,7 +312,7 @@
                   <div class="graph-title">
                     <div data-tippy-content=" Dana Bagi Hasil Cukai Hasil Tembakau" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH CHT</h3>
-                    <div class="paragraph-small">(dalam Rp 000)</div>
+                    <div class="paragraph-small">(dalam Juta)</div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_CHT-chart">
                     <canvas id="DBH_CHT-chart" style="width: 100%;"></canvas>

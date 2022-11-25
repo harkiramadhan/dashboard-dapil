@@ -340,7 +340,7 @@ $('#downloadPdf').click(function(event) {
         removeContainer: true,
         backgroundColor: null,
         imageTimeout: 15000,
-        logging: true,
+        logging: false,
         useCORS: true
     }).then((canvas) => {
         const imgWidth = 208;
