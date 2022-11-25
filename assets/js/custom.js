@@ -35,6 +35,7 @@ loadChart()
 
 function loadChart(){
     $('.dapil-name').text($('.filter-dapil.opened').text())
+    loadPhotos()
 
     getDescText()
     loadBarChart('DAK Fisik Reguler', 'DAK_Fisik_Reguler-chart')
@@ -76,6 +77,22 @@ function loadChart(){
     loadLineChart('APM SMP', 'APM_SMP-chart')
     loadLineChart('APM SM', 'APM_SM-chart')
     loadTable()
+}
+
+function loadPhotos(){
+    var dapil = $('.filter-dapil.opened').text()
+    $.ajax({
+        url: baseUrl + 'dashboard/foto',
+        type: 'get',
+        data: {dapil : dapil},
+        beforeSend: function(){
+            $('.foto').empty()
+        },
+        success: function(res){
+            $('.foto').html(res)
+            $('#downloadPdf').css('display', "flex")
+        }
+    })
 }
 
 function getDescText(){
@@ -313,6 +330,7 @@ tippy('.tooltip', {
 })
 
 $('#downloadPdf').click(function(event) {
+    $('.foto').css('display', 'block')
     if(screen.width < 1024) {
         document.getElementById("viewport").setAttribute("content", "width=1200px");
     }
@@ -341,4 +359,5 @@ $('#downloadPdf').click(function(event) {
         }
         doc.save('Download.pdf');
     });
+    $('.foto').css('display', 'none')
 });

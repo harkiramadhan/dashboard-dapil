@@ -37,6 +37,7 @@ class ComposerStaticInit5ae9b47e47ef57cabd22883a7ade5ee2
         'M' => 
         array (
             'MyCLabs\\Enum\\' => 13,
+            'Mimey\\' => 6,
             'Matrix\\' => 7,
         ),
         'D' => 
@@ -87,6 +88,10 @@ class ComposerStaticInit5ae9b47e47ef57cabd22883a7ade5ee2
         'MyCLabs\\Enum\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
+        ),
+        'Mimey\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ralouphie/mimey/src',
         ),
         'Matrix\\' => 
         array (

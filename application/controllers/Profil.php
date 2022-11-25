@@ -1,6 +1,10 @@
 <?php
 class Profil extends CI_Controller{
     function index(){
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: PUT, GET, POST");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
         $provid = $this->input->get('prov', TRUE);
         $var['provinsi'] = $this->db->get_where('provinsi', ['id' => $provid])->row();
         $var['dapil'] = $this->db->order_by('urut', "ASC")->get_where('dapil', ['provinsi_id' => $provid]);
@@ -43,10 +47,17 @@ class Profil extends CI_Controller{
         ?><div class="w-layout-grid grid-4-content margin-24"><?php
             foreach($data as $row){
                 if($row['dapil'] == $dapil){
+                    $path = "https://www.dpr.go.id/" . $row['foto'];
+                    $mimer = new \Mimey\MimeTypes();
+                    $mimetype = $mimer->getMimeType(pathinfo($path,PATHINFO_EXTENSION));
+
+                    $source = file_get_contents($path);
+                    $base64 = base64_encode($source);
+                    $blob = 'data:'.$mimetype.';base64,'.$base64;
                     ?>
                         <div id="w-node-d81d9352-9940-5d49-8014-4ba3bde4962a-95221726" class="profile-wrapper">
                             <div class="profile-image-wrapper">
-                                <img src="https://www.dpr.go.id/<?= $row['foto'] ?>" loading="lazy" alt="" class="profile-image">
+                                <img src="<?= $blob ?>" loading="lazy" alt="" class="profile-image">
                             </div>
                             <div class="profile-content">
                                 <div class="margin-8">

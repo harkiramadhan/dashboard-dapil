@@ -13,7 +13,8 @@
 	"require": {
 		"php": ">=5.4.8",
 		"phpoffice/phpspreadsheet": "^1.25",
-		"ozdemir/datatables": "^2.3"
+		"ozdemir/datatables": "^2.3",
+		"ralouphie/mimey": "^1.0"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"

@@ -23,7 +23,7 @@ $('#downloadPdf').click(function(event) {
         removeContainer: true,
         backgroundColor: '#ffffff',
         imageTimeout: 15000,
-        logging: true,
+        logging: false,
         useCORS: true
     }).then((canvas) => {
         const imgWidth = 208;
@@ -42,7 +42,7 @@ $('#downloadPdf').click(function(event) {
         }
         doc.save('Download.pdf');
     });
-    $(this).css('display', 'block')
+    $(this).css('display', 'flex')
 });
 
 function loadPhotos(){
