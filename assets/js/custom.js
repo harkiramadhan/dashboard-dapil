@@ -1,6 +1,6 @@
 var loader = "<div style='text-align:center !important'><img src='" + assetsUrl + "loader.svg' alt=''></div>";
 var provinsiid = $('#provinsiid').val()
-var dapil = $('.filter-dapil.opened').text()
+var dapil = $('.filter-dapil.opened').text().replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, ' ')
 var bidang = $('#bidang').text()
 var tahun = $('#tahun').text()
 
@@ -357,7 +357,27 @@ $('#downloadPdf').click(function(event) {
             doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
             heightLeft -= pageHeight;
         }
-        doc.save('Download.pdf');
+        doc.save( dapil + '.pdf');
     });
     $('.foto').css('display', 'none')
 });
+
+$('.btn-download-chart').click(function(){
+    $(this).css('display', 'none')
+    var div = $(this).attr('data-printid')
+    var name = $(this).attr('data-docname')
+
+    html2canvas(document.querySelector("#" + div)).then(canvas => {
+        var imgData = canvas.toDataURL("image/png",1);
+        var pdf = new jsPDF("p", "pt", "letter");
+        var pageWidth = pdf.internal.pageSize.getWidth();
+        var pageHeight = pdf.internal.pageSize.getHeight();
+        var imageWidth = canvas.width;
+        var imageHeight = canvas.height;
+
+        var ratio = imageWidth/imageHeight >= pageWidth/pageHeight ? pageWidth/imageWidth : pageHeight/imageHeight;
+        pdf.addImage(imgData, 'PNG', 0, 0, imageWidth * ratio, imageHeight * ratio);
+        pdf.save(name + " - " + dapil + ".pdf");
+    });
+    $(this).css('display', 'block')
+})

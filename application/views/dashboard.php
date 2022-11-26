@@ -146,6 +146,13 @@
                     <div data-tippy-content="Dana Alokasi Khusus Fisik Reguler" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Fisik Reguler</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-d81d9352-9940-5d49-8014-4ba3bde4962a-ec0da9ff" data-docname="DAK Fisik Reguler">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Fisik_Reguler-chart">
                     <canvas id="DAK_Fisik_Reguler-chart" style="width: 100%;"></canvas>
@@ -156,6 +163,13 @@
                     <div data-tippy-content="Dana Alokasi Khusus Fisik Penugasan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Fisik Penugasan</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-f8ad2aae-4107-6c8e-04f1-3519ba3396c1-ec0da9ff" data-docname="DAK Fisik Penugasan">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Fisik_Penugasan-chart">
                     <canvas id="DAK_Fisik_Penugasan-chart" style="width: 100%;"></canvas>
@@ -166,6 +180,13 @@
                     <div data-tippy-content="Dana Alokasi Khusus Fisik Afirmasi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Fisik Afirmasi</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-_30d3b11e-f6e7-561e-1903-1b053dc12f5d-ec0da9ff" data-docname="DAK Fisik Afirmasi">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Fisik_Afirmasi-chart">
                     <canvas id="DAK_Fisik_Afirmasi-chart" style="width: 100%;"></canvas>
@@ -176,6 +197,13 @@
                     <div data-tippy-content="Dana Alokasi Khusus Non Fisik" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAK Non Fisik</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-a671b37f-c7dc-ad68-c70f-9a627aedc524-ec0da9ff" data-docname="DAK Non Fisik">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DAK_Non_Fisik-chart">
                     <canvas id="DAK_Non_Fisik-chart" style="width: 100%;"></canvas>
@@ -186,6 +214,13 @@
                     <div data-tippy-content=" Dana Alokasi Umum" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DAU</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-_85c7003f-a803-1f71-9bd8-3a609ec320ac-ec0da9ff" data-docname="Dana Alokasi Umum">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DAU-chart">
                     <canvas id="DAU-chart" style="width: 100%;"></canvas>
@@ -196,6 +231,13 @@
                     <div data-tippy-content=" Dana Insentif Daerah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DID</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-c1c4d836-3222-3dd2-5987-d3173d6186e1-ec0da9ff" data-docname="Dana Insentif Daerah">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DID-chart">
                     <canvas id="DID-chart" style="width: 100%;"></canvas>
@@ -205,6 +247,13 @@
                   <div class="graph-title">
                     <h3 class="heading-xs medium">Dana Desa</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-_62128a06-0ea3-dcdb-1c01-98edf600c336-ec0da9ff" data-docname="Dana Desa">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-Dana_Desa-chart">
                     <canvas id="Dana_Desa-chart" style="width: 100%;"></canvas>
@@ -243,6 +292,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Pajak Bumi dan Bangunan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH PBB</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-381693661878-ec0da9ff" data-docname="DBH PBB">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_PBB-chart">
                     <canvas id="DBH_PBB-chart" style="width: 100%;"></canvas>
@@ -253,6 +309,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Pajak Penghasilan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH PPh</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-38169366187a-ec0da9ff" data-docname="DBH PPh">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="id-DBH_PPh-chart">
                     <canvas id="DBH_PPh-chart" style="width: 100%;"></canvas>
@@ -263,6 +326,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Panas Bumi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Panas Bumi</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-38169366187c-ec0da9ff" data-docname="DBH SDA Panas Bumi">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="id-DBH_SDA_Panas_Bumi-chart">
                     <canvas id="DBH_SDA_Panas_Bumi-chart" style="width: 100%;"></canvas>
@@ -273,6 +343,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Perikanan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Perikanan</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-38169366187e-ec0da9ff" data-docname="DBH SDA Perikanan">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Perikanan-chart">
                     <canvas id="DBH_SDA_Perikanan-chart" style="width: 100%;"></canvas>
@@ -283,6 +360,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Kehutanan" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Kehutanan</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-381693661880-ec0da9ff" data-docname="DBH SDA Kehutanan">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Kehutanan-chart">
                     <canvas id="DBH_SDA_Kehutanan-chart" style="width: 100%;"></canvas>
@@ -293,6 +377,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Minyak dan Gas Bumi" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Migas</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-381693661882-ec0da9ff" data-docname="DBH SDA Migas">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Migas-chart">
                     <canvas id="DBH_SDA_Migas-chart" style="width: 100%;"></canvas>
@@ -303,6 +394,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Sumber Daya Alam Mineral dan Batubara" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH SDA Minerba</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-381693661884-ec0da9ff" data-docname="DBH SDA Minerba">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_SDA_Minerba-chart">
                     <canvas id="DBH_SDA_Minerba-chart" style="width: 100%;"></canvas>
@@ -313,6 +411,13 @@
                     <div data-tippy-content=" Dana Bagi Hasil Cukai Hasil Tembakau" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                     <h3 class="heading-xs medium">DBH CHT</h3>
                     <div class="paragraph-small">(dalam Juta)</div>
+                    <div class="graph-download-icon btn-download-chart" data-printid="w-node-ec2c38c2-0b6b-a007-1110-381693661886-ec0da9ff" data-docname="DBH CHT">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                   <div class="w-embed w-script" id="div-DBH_CHT-chart">
                     <canvas id="DBH_CHT-chart" style="width: 100%;"></canvas>
@@ -335,6 +440,13 @@
                       <div data-tippy-content="Indeks Pembangunan Manusia" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xs medium">IPM</h3>
                       <div class="paragraph-small">dalam (%)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-ecdd8c13-28ad-bb49-c00c-c6898fa313e4-ec0da9ff" data-docname="Indeks Pembangunan Manusia">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="IPM-chart" style="width: 100%;"></canvas>
@@ -346,6 +458,13 @@
                       <div data-tippy-content="Angka Harapan Hidup" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xs medium">AHH</h3>
                       <div class="paragraph-small">(tahun)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_22d40952-1588-ce49-d597-342f996fcc20-ec0da9ff" data-docname="AHH">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="AHH-chart" style="width: 100%;"></canvas>
@@ -357,6 +476,13 @@
                       <div data-tippy-content="Harapan Lama Sekolah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xs medium">HLS</h3>
                       <div class="paragraph-small">(tahun)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-ea25fa97-d09c-13c6-5ffe-6bc8a7131284-ec0da9ff" data-docname="HLS">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="HLS-chart" style="width: 100%;"></canvas>
@@ -368,6 +494,13 @@
                       <div data-tippy-content="Rata-rata Lama Sekolah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xs medium">RLS</h3>
                       <div class="paragraph-small">(tahun)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_2d4a4fd2-34fe-646e-b048-1df27e513dcf-ec0da9ff" data-docname="RLS">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="RLS-chart" style="width: 100%;"></canvas>
@@ -378,6 +511,13 @@
                     <div class="graph-title">
                       <h3 class="heading-xs medium">Pengeluaran per Kapita</h3>
                       <div class="paragraph-small">(Rp 000)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-ca91e47f-9597-b78e-58cd-3ea6bc01f216-ec0da9ff" data-docname="Pengeluaran per Kapita">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="Pengeluaran_per_Kapita-chart" style="max-height:320px; width:100%;"></canvas>
@@ -389,6 +529,13 @@
                       <div data-tippy-content="Indeks Pembangunan Manusia per Kabupaten/Kota" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xs medium">IPM per Kabupaten/Kota</h3>
                       <div class="paragraph-small">(dalam %)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-ecc24572-4f9f-65ce-5185-947ceb5056fc-ec0da9ff" data-docname="IPM per Kabupaten/Kota">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="IPM_per_Kabupaten_Kota-chart" style="max-height: 480px; width: 100%;"></canvas>
@@ -399,6 +546,13 @@
                       <div class="graph-title">
                         <h3 class="heading-xxs medium">Tingkat Partisipasi Angkatan Kerja per Kab/Kota</h3>
                         <div class="paragraph-small">(dalam %)</div>
+                        <div class="graph-download-icon btn-download-chart" data-printid="w-node-_649917c6-271f-0439-6e14-b2bb129f4c94-ec0da9ff" data-docname="Tingkat Partisipasi Angkatan Kerja per Kab/Kota">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                       </div>
                       <div class="w-embed w-script">
                         <canvas id="TPAK-chart" style="height: 320px; width: 100%;"></canvas>
@@ -408,6 +562,13 @@
                       <div class="graph-title">
                         <h3 class="heading-xxs medium">Tingkat Pengangguran per Kab/Kota</h3>
                         <div class="paragraph-small">(dalam %)</div>
+                        <div class="graph-download-icon btn-download-chart" data-printid="w-node-cb3dd79d-c318-1729-812b-c67266ce91d3-ec0da9ff" data-docname="Tingkat Pengangguran per Kab/Kota">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                       </div>
                       <div class="w-embed w-script">
                         <canvas id="TPT-chart" style="height: 320px; width: 100%;"></canvas>
@@ -418,6 +579,13 @@
                     <div class="graph-title">
                       <h3 class="heading-xxs medium">Jumlah Penduduk Miskin per Kab/Kota</h3>
                       <div class="paragraph-small">(ribu jiwa)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_501dec09-3980-8afe-7618-cd297dbb041e-ec0da9ff" data-docname="Jumlah Penduduk Miskin per Kab/Kota">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="Jml_Pend_Miskin-chart" style="max-height:300px;width: 100%;"></canvas>
@@ -427,6 +595,13 @@
                     <div class="graph-title">
                       <h3 class="heading-xxs medium">Rata-rata Jumlah Penduduk Miskin </h3>
                       <div class="paragraph-small">(ribu jiwa)</div>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-c447a6c9-4533-0509-8e2b-5dbcab5927c8-ec0da9ff" data-docname="Rata-rata Jumlah Penduduk Miskin ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="Rata_Rata_Pend_Miskin-chart" style="max-height:300px; width: 100%;"></canvas>
@@ -436,6 +611,13 @@
                   <div id="w-node-_375240f1-9e01-5fc7-c7e4-2bf953260e5e-ec0da9ff" class="bar-content short">
                     <div class="graph-title">
                       <h3 class="heading-xxs medium">Rata-rata % Penduduk Miskin</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_375240f1-9e01-5fc7-c7e4-2bf953260e5e-ec0da9ff" data-docname="Rata-rata % Penduduk Miskin">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="Pend_Miskin-chart" style="max-height: 320px; width: 100%;"></canvas>
@@ -446,6 +628,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Kasar PAUD" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APK PAUD</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_1f52cd19-39e5-4bc4-5a26-7505501d0873-ec0da9ff" data-docname="APK PAUD">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APK_PAUD-chart" style="width: 100%;"></canvas>
@@ -456,6 +645,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Kasar Sekolah Dasar" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APK SD</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_3b5d8742-3d44-2d1e-07b5-cdfe9cb6614d-ec0da9ff" data-docname="APK SD">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APK_SD-chart" style="width: 100%;"></canvas>
@@ -466,6 +662,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Kasar Sekolah Menengah Pertama" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APK SMP</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-b083bf0f-b0b8-35e9-b451-bfcd61b21d2d-ec0da9ff" data-docname="APK SMP">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APK_SMP-chart" style="width: 100%;"></canvas>
@@ -476,6 +679,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Kasar Sekolah Menengah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APK SM</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_218c9880-97f5-9a84-2cd4-df84f73d02ae-ec0da9ff" data-docname="APK SM">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APK_SMA-chart" style="width: 100%;"></canvas>
@@ -486,6 +696,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Murni Sekolah Dasar" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APM SD</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_85608af2-0897-e002-fc85-65e65f7ea0f4-ec0da9ff" data-docname="APM SD">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APM_SD-chart" style="width: 100%;"></canvas>
@@ -496,6 +713,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Murni Sekolah Menengah Pertama" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APM SMP</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_4d86c549-6244-6f5e-7ab7-d657f818c2c7-ec0da9ff" data-docname="APM MP">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APM_SMP-chart" style="width: 100%;"></canvas>
@@ -506,6 +730,13 @@
                     <div class="graph-title">
                       <div data-tippy-content="Angka Partisipasi Murni Sekolah Menengah" class="tooltip"><img src="<?= base_url('assets/images/fi_help-circle-grey.svg') ?>" loading="lazy" alt=""></div>
                       <h3 class="heading-xxs medium">APM SM</h3>
+                      <div class="graph-download-icon btn-download-chart" data-printid="w-node-_314ab4b1-48e0-378a-ea8f-b0cdc4cc9215-ec0da9ff" data-docname="APM SM">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7 10L12 15L17 10" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 15V3" stroke="CurrentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
                     </div>
                     <div class="w-embed w-script">
                       <canvas id="APM_SM-chart" style="width: 100%;"></canvas>

@@ -1588,6 +1588,46 @@ ol {
   margin-left: auto;
 }
 
+.graph-title {
+  position: relative;
+  display: flex;
+  margin-bottom: 12px;
+  padding-right: 32px;
+  padding-left: 32px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-column-gap: 6px;
+  text-align: center;
+}
+
+.graph-title:tiny {
+  grid-column-gap: 4px;
+}
+
+.graph-download-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  width: 24px;
+  height: 24px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #97a5eb;
+}
+
+.graph-download-icon:small {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.graph-download-icon:hover {
+  color: black;
+}
+
 @media screen and (max-width: 991px) {
   .heading-xl.regular {
     font-size: 48px;
