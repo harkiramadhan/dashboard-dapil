@@ -451,13 +451,6 @@ ol {
   background-color: transparent;
 }
 
-.nav-brand {
-  width: 88px;
-  height: 88px;
-  margin-top: 12px;
-  padding: 12px;
-}
-
 .hp-hero-section {
   position: relative;
   padding-top: 40px;
@@ -906,11 +899,14 @@ ol {
 }
 
 .graph-title {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 12px;
+  padding-right: 32px;
+  padding-left: 32px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -932,7 +928,7 @@ ol {
 }
 
 .heading-xxs {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 150%;
   font-weight: 700;
 }
@@ -942,7 +938,6 @@ ol {
 }
 
 .heading-xxs.medium {
-  font-size: 16px;
   font-weight: 500;
 }
 
@@ -1009,12 +1004,13 @@ ol {
 }
 
 .footer-caption {
-  font-size: 14px;
+  font-size: 20px;
+  line-height: 36px;
   text-align: center;
 }
 
 .footer-caption-small {
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -1565,49 +1561,13 @@ ol {
   margin-bottom: 16px;
 }
 
-.hp-hero-section {
-  position: relative;
-  padding-top: 40px;
-  padding-bottom: 140px;
-  background-image: linear-gradient(to bottom, white, hsla(0, 0.00%, 100.00%, 0.40) 80%), @img_63736730cdd1c426803402c4;
-  background-position: 0px 0px, 50% 100%;
-  background-size: auto, contain;
-  background-repeat: repeat, repeat;
-}
-
-.hp-hero-section:tiny {
-  background-image: linear-gradient(to bottom, white, hsla(0, 0.00%, 100.00%, 0.40) 10%), @img_63736730cdd1c426803402c4;
-  background-position: 0px 0px, 50% 100%;
-  background-size: auto, contain;
-  background-repeat: repeat, repeat;
-}
-
 .dapil-detail {
   max-width: 540px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.graph-title {
-  position: relative;
-  display: flex;
-  margin-bottom: 12px;
-  padding-right: 32px;
-  padding-left: 32px;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  grid-column-gap: 6px;
-  text-align: center;
-}
-
-.graph-title:tiny {
-  grid-column-gap: 4px;
-}
-
 .graph-download-icon {
-  cursor: pointer;
   position: absolute;
   top: 0%;
   right: 0%;
@@ -1619,13 +1579,40 @@ ol {
   color: #97a5eb;
 }
 
-.graph-download-icon:small {
-  margin-top: 0px;
-  margin-bottom: 0px;
+.margin-top-120 {
+  margin-top: 120px;
 }
 
-.graph-download-icon:hover {
-  color: black;
+.sidenav-secondary-heading {
+  color: #8b8d97;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.nav-brand-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 12px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-column-gap: 16px;
+}
+
+.setjen-logo {
+  width: 88px;
+  height: 88px;
+  padding: 12px;
+}
+
+.inang-logo {
+  width: 120px;
+  height: 48px;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 991px) {
@@ -1634,10 +1621,10 @@ ol {
   }
 
   .nav-brand {
-    width: 72px;
-    height: 72px;
-    margin-bottom: 12px;
-    padding: 4px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
   }
 
   .page-wrapper {
@@ -1665,6 +1652,13 @@ ol {
     padding: 40px;
     border-bottom: 1px solid #5570f1;
     background-color: #f4f5fa;
+  }
+
+  .sidenav-link {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
   }
 
   .sidenav-link.hide-tablet {
@@ -1715,7 +1709,6 @@ ol {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-    grid-row-gap: 16px;
   }
 
   .grid-3-content {
@@ -1746,6 +1739,21 @@ ol {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+
+  .margin-top-120 {
+    margin-top: 24px;
+  }
+
+  .setjen-logo {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 8px;
+    padding: 4px;
+  }
+
+  .inang-logo {
+    width: 120px;
   }
 }
 
@@ -1912,6 +1920,11 @@ ol {
     flex-wrap: wrap;
     grid-row-gap: 16px;
   }
+
+  .graph-download-icon {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -1933,9 +1946,15 @@ ol {
   }
 
   .nav-brand {
-    width: 64px;
-    height: 64px;
-    padding: 0px;
+    padding-left: 0px;
+  }
+
+  .hp-hero-section {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(10%, hsla(0, 0%, 100%, 0.4))), url('../images/bg-homepage.svg');
+    background-image: linear-gradient(180deg, #fff, hsla(0, 0%, 100%, 0.4) 10%), url('../images/bg-homepage.svg');
+    background-position: 0px 0px, 50% 100%;
+    background-size: auto, contain;
+    background-repeat: repeat, repeat;
   }
 
   .home-dropdown-toggle {
@@ -2004,6 +2023,7 @@ ol {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+    grid-row-gap: 8px;
   }
 
   .grid-padded {
@@ -2081,9 +2101,19 @@ ol {
 
   .download-button {
     padding: 8px 10px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     border-radius: 6px;
     font-size: 15px;
     line-height: 140%;
+  }
+
+  .setjen-logo {
+    width: 56px;
+    height: 56px;
+    padding: 0px;
   }
 }
 
