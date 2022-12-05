@@ -20,7 +20,12 @@
 <body>
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
     <div class="nav-container">
-      <a href="index.html" aria-current="page" class="nav-brand w-nav-brand w--current"><img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, images/logo-setjen-reduced.png 942w" sizes="64px" alt=""></a>
+      <a href="#" class="nav-brand w-nav-brand">
+        <div class="nav-brand-flex">
+          <img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, <?= base_url('assets/images/logo-setjen-reduced.png') ?> 942w" sizes="(max-width: 479px) 56px, (max-width: 991px) 72px, 88px" alt="" class="setjen-logo">
+          <img src="<?= base_url('assets/images/inangdapil-notext.jpg') ?>" loading="lazy" srcset="<?= base_url('assets/images/inangdapil-notext.jpg') ?> 500w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 800w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 1080w" sizes="120px" alt="" class="inang-logo">
+        </div>
+      </a>
     </div>
   </div>
   <div class="hp-hero-section wf-section">
