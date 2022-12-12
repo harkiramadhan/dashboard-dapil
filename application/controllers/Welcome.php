@@ -20,9 +20,9 @@ class Welcome extends CI_Controller {
 	 */
 
 	function index(){
-		$var['provinsi'] = $this->db->get('provinsi');
+		$var['provinsi'] = $this->db->order_by('urut', "ASC")->get('provinsi');
 		$dapils = [];
-		$getProv = $this->db->get('provinsi');
+		$getProv = $this->db->order_by('urut', "ASC")->get('provinsi');
 		foreach($getProv->result() as $row){
 			$getDapil = $this->db->get_where('kabupaten', ['provinsi_id' => $row->id])->num_rows();
 			array_push($dapils, [strtolower($row->kode), $getDapil]);

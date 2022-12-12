@@ -21,9 +21,9 @@
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav w-nav">
     <div class="nav-container">
       <a href="#" class="nav-brand w-nav-brand">
-        <div class="nav-brand-flex">
-          <img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, <?= base_url('assets/images/logo-setjen-reduced.png') ?> 942w" sizes="(max-width: 479px) 56px, (max-width: 991px) 72px, 88px" alt="" class="setjen-logo">
-          <img src="<?= base_url('assets/images/inangdapil-notext.jpg') ?>" loading="lazy" srcset="<?= base_url('assets/images/inangdapil-notext.jpg') ?> 500w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 800w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 1080w" sizes="120px" alt="" class="inang-logo">
+        <div class="nav-brand-flex" style="margin-top: 50px">
+          <img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, <?= base_url('assets/images/logo-setjen-reduced.png') ?> 942w" sizes="(max-width: 479px) 56px, (max-width: 991px) 72px, 88px" alt="" class="setjen-logo" style="height: 100px !important; width: auto;">
+          <img src="<?= base_url('assets/images/inangdapil-notext.jpg') ?>" loading="lazy" srcset="<?= base_url('assets/images/inangdapil-notext.jpg') ?> 500w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 800w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 1080w" sizes="120px" alt="" class="inang-logo" style="height: 100px !important; width: auto;">
         </div>
       </a>
     </div>
@@ -32,10 +32,7 @@
     <div class="hp-hero-container">
       <div class="hp-content-wrapper">
         <div class="hero-heading-wrapper">
-          <h1 class="heading-xl regular">Kenali daerah Dapil anda dengan data lebih lengkap</h1>
-        </div>
-        <div class="ct-grey-40">
-          <div class="paragraph-large">Lebih dekat dengan kondisi daerah pemilihan anda!</div>
+          <h1 class="heading-xl regular">Indikator dan Anggaran Daerah Pemilihan</h1>
         </div>
         <div data-hover="false" data-delay="0" class="filter-dropdown w-dropdown">
           <div class="home-dropdown-toggle w-dropdown-toggle">
