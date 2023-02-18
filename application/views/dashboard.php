@@ -2,7 +2,7 @@
 <html data-wf-page="633dbb106f6af822ec0da9ff" data-wf-site="633b251b96dff4c8a7043d93">
 <head>
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>Inangdapil | PKA DPR RI</title>
   <meta content="Dashboard" property="og:title">
   <meta content="Dashboard" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport" id="viewport">
@@ -56,7 +56,7 @@
           <div class="margin-top-120">
             <div class="sidenav-menu-flex">
               <div class="margin-16">
-                <div class="sidenav-secondary-heading">BUKU&nbsp;PANDUAN</div>
+                <div class="sidenav-secondary-heading">BUKU&nbsp;PANDUAN<br>TRANSFER&nbsp;DAERAH</div>
               </div>
               <a href="<?= base_url('assets/Buku_Panduan_TKD.pdf') ?>" class="download-button w-inline-block" download>
                 <div class="icon-24 w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -296,6 +296,9 @@
                       </ol>
                       <p>Transfer ke Daerah ditetapkan dalam APBN, Peraturan Presiden, dan Peraturan Menteri Keuangan (PMK) yang selanjutnya dituangkan dalam Daftar Isian Pelaksanaan Anggaran (DIPA) yang ditandatangani oleh Direktur Jenderal Perimbangan Keuangan selaku Kuasa Pengguna Anggaran atas nama Menteri Keuangan selaku Pengguna Anggaran untuk tiap jenis Transfer ke Daerah dengan dilampiri rincian alokasi per daerah.</p>
                       <p>Dana Desa didefinisikan sebagai dana yang bersumber dari APBN yang diperuntukkan bagi desa yang ditransfer melalui APBD kabupaten/kota dan digunakan unuk membiayai penyelenggaraan pemerintahan, pelaksanaan pembangunan, pembinaan, kemasyarakatan dan pemberdayaan masyarakat. Dana ini dialokasikan secara berkeadilan berdasarkan: alokasi dasar, dan alokasi yang dihitung dengan memperhatikan jumlah penduduk, angka kemiskinan, luas wilayah, dan tingkat kesulitan geografis desa setiap kabupaten/kota.</p>
+                      <p>
+                        <a href="<?= base_url('assets/Buku_Panduan_TKD.pdf') ?>" class="breadcrumb-link"><u><i>Unduh Buku Panduan Transfer</i></u></a>
+                      </p>
                     </div>
                   </div>
                 </div>

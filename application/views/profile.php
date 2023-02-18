@@ -2,7 +2,7 @@
 <html data-wf-page="635b013fd188c12695221726" data-wf-site="633b251b96dff4c8a7043d93">
 <head>
     <meta charset="utf-8">
-    <title>Profil</title>
+    <title>Inangdapil | PKA DPR RI</title>
     <meta content="Profil" property="og:title">
     <meta content="Profil" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -60,7 +60,7 @@
                     <div class="margin-top-120">
                         <div class="sidenav-menu-flex">
                             <div class="margin-16">
-                                <div class="sidenav-secondary-heading">BUKU&nbsp;PANDUAN</div>
+                                <div class="sidenav-secondary-heading">BUKU&nbsp;PANDUAN<br>TRANSFER&nbsp;DAERAH</div>
                             </div>
                             <a href="<?= base_url('assets/Buku_Panduan_TKD.pdf') ?>" class="download-button w-inline-block" download>
                                 <div class="icon-24 w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

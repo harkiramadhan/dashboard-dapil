@@ -2,7 +2,7 @@
 <html data-wf-page="633b251b96dff4945c043d94" data-wf-site="633b251b96dff4c8a7043d93">
 <head>
   <meta charset="utf-8">
-  <title>Client&#x27;s Dashboard</title>
+  <title>Inangdapil | PKA DPR RI</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="<?= base_url('assets/css/normalize.css') ?>" rel="stylesheet" type="text/css">
   <link href="<?= base_url('assets/css/components.css') ?>" rel="stylesheet" type="text/css">
@@ -22,8 +22,8 @@
     <div class="nav-container">
       <a href="#" class="nav-brand w-nav-brand">
         <div class="nav-brand-flex" style="margin-top: 50px">
-          <img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, <?= base_url('assets/images/logo-setjen-reduced.png') ?> 942w" sizes="(max-width: 479px) 56px, (max-width: 991px) 72px, 88px" alt="" class="setjen-logo" style="height: 100px !important; width: auto;">
-          <img src="<?= base_url('assets/images/inangdapil-notext.jpg') ?>" loading="lazy" srcset="<?= base_url('assets/images/inangdapil-notext.jpg') ?> 500w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 800w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 1080w" sizes="120px" alt="" class="inang-logo" style="height: 100px !important; width: auto;">
+          <img src="<?= base_url('assets/images/logo-setjen-reduced.png') ?>" loading="lazy" srcset="<?= base_url('assets/images/logo-setjen-reduced-p-500.png') ?> 500w, <?= base_url('assets/images/logo-setjen-reduced.png') ?> 942w" sizes="(max-width: 479px) 56px, (max-width: 991px) 72px, 88px" alt="" class="setjen-logo" style="height: 80px !important; width: auto;">
+          <img src="<?= base_url('assets/images/inangdapil-notext.jpg') ?>" loading="lazy" srcset="<?= base_url('assets/images/inangdapil-notext.jpg') ?> 500w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 800w, <?= base_url('assets/images/inangdapil-notext.jpg') ?> 1080w" sizes="120px" alt="" class="inang-logo" style="height: 80px !important; width: auto;">
         </div>
       </a>
     </div>
